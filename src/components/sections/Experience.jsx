@@ -1,33 +1,36 @@
 import SectionLabel from '../SectionLabel'
-import { experiences } from '../../data/portfolio'
+import { experienceSection, experiences } from '../../data/portfolio'
+import { useSite } from '../../theme'
 
 function Experience() {
+  const { t } = useSite()
+
   return (
     <section className="experience" id="experiencia">
       <div className="experience-inner section">
         <div className="experience-heading">
-          <SectionLabel number="03">Minha trajetória</SectionLabel>
-          <h2>
-            Experiência construída entre <em>estudo e prática.</em>
-          </h2>
-          <p>
-            Não venho de anos de empresa. Venho de projetos que eu levantei do
-            zero, quebrei e arrumei até funcionar direito.
-          </p>
+          <div>
+            <SectionLabel number="03">{experienceSection.label}</SectionLabel>
+            <h2 className="section-title">
+              {t(experienceSection.titleStart)}
+              <em>{t(experienceSection.titleAccent)}</em>
+            </h2>
+          </div>
+          <p>{t(experienceSection.intro)}</p>
         </div>
 
         <div className="experience-list">
           {experiences.map((experience) => (
-            <article className="experience-item" key={experience.number}>
+            <article className="experience-item rule-top" key={experience.number}>
               <span className="experience-number">{experience.number}</span>
               <div className="experience-meta">
-                <strong>{experience.category}</strong>
-                <span>{experience.period}</span>
+                <strong>{t(experience.category)}</strong>
+                <span>{t(experience.period)}</span>
               </div>
               <div className="experience-content">
-                <h3>{experience.title}</h3>
-                <p>{experience.description}</p>
-                <ul>
+                <h3>{t(experience.title)}</h3>
+                <p>{t(experience.description)}</p>
+                <ul className="tag-list">
                   {experience.tags.map((tag) => (
                     <li key={tag}>{tag}</li>
                   ))}

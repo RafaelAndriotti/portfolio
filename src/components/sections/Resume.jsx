@@ -1,80 +1,60 @@
-import ArrowIcon from '../ArrowIcon'
-import DownloadIcon from '../DownloadIcon'
+import { ArrowIcon, DownloadIcon } from '../icons'
 import SectionLabel from '../SectionLabel'
 import { resume } from '../../data/portfolio'
-
-function ResumeActions() {
-  if (!resume.available) {
-    return (
-      <>
-        <div className="resume-actions">
-          <button className="button button-primary" type="button" disabled>
-            Visualizar currículo <ArrowIcon />
-          </button>
-          <button className="button button-outline" type="button" disabled>
-            Baixar PDF <DownloadIcon />
-          </button>
-        </div>
-        <p className="resume-status">Currículo em atualização.</p>
-      </>
-    )
-  }
-
-  return (
-    <div className="resume-actions">
-      <a
-        className="button button-primary"
-        href={resume.path}
-        target="_blank"
-        rel="noreferrer"
-      >
-        Visualizar currículo <ArrowIcon />
-      </a>
-      <a className="button button-outline" href={resume.path} download>
-        Baixar PDF <DownloadIcon />
-      </a>
-    </div>
-  )
-}
+import { useSite } from '../../theme'
 
 function Resume() {
+  const { t } = useSite()
+
   return (
     <section className="resume section" id="curriculo">
-      <SectionLabel number="05">Currículo</SectionLabel>
+      <SectionLabel number="05">{resume.label}</SectionLabel>
 
-      <div className="resume-card">
+      <div className="resume-card card">
         <div className="resume-copy">
-          <p className="resume-kicker">Perfil profissional</p>
-          <h2>Minha trajetória, reunida em uma página.</h2>
-          <p>
-            Uma visão direta das minhas habilidades, estudos e experiências com
-            desenvolvimento back-end.
-          </p>
+          <p className="resume-kicker">{t(resume.kicker)}</p>
+          <h2>{t(resume.title)}</h2>
+          <p>{t(resume.description)}</p>
           <ul className="resume-highlights">
-            <li>Desenvolvimento back-end</li>
-            <li>APIs REST e modelagem de dados</li>
-            <li>Node.js, TypeScript e SQL</li>
+            {resume.highlights.map((highlight) => (
+              <li key={highlight.pt}>{t(highlight)}</li>
+            ))}
           </ul>
-          <ResumeActions />
+
+          <div className="resume-actions">
+            <a
+              className="button button-primary"
+              href={resume.path}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t(resume.view)} <ArrowIcon />
+            </a>
+            <a className="button button-outline" href={resume.path} download>
+              {t(resume.download)} <DownloadIcon />
+            </a>
+            <span className="resume-status">{t(resume.note)}</span>
+          </div>
         </div>
 
-        <div className="resume-document" aria-hidden="true">
+        <a className="resume-document" href={resume.path} target="_blank" rel="noreferrer">
           <div className="document-topline">
-            <span>Rafael</span>
+            <span>Guaíba, RS</span>
             <b>CV</b>
           </div>
-          <strong>Desenvolvedor back-end</strong>
-          <div className="document-lines">
-            <span />
-            <span />
-            <span />
+          <div>
+            <strong>Rafael Andriotti Rebelo</strong>
+            <span>{t(resume.role)}</span>
           </div>
-          <div className="document-columns">
-            <span />
-            <span />
+          <div className="document-rows">
+            {resume.rows.map((row) => (
+              <div className="document-row" key={row.label.pt}>
+                <span>{t(row.label)}</span>
+                <span>{t(row.value)}</span>
+              </div>
+            ))}
           </div>
-          <p>Node · TypeScript · SQL</p>
-        </div>
+        </a>
       </div>
     </section>
   )

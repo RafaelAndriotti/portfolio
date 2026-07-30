@@ -8,13 +8,17 @@ import Skills from './components/sections/Skills'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import SkillsStrip from './components/SkillsStrip'
+import { useSite } from './theme'
+import { ui } from './data/portfolio'
 import './App.css'
 
 function App() {
+  const { t } = useSite()
+
   return (
     <div className="site-shell">
       <a className="skip-link" href="#conteudo-principal">
-        Pular para o conteúdo
+        {t(ui.skip)}
       </a>
       <Header />
 

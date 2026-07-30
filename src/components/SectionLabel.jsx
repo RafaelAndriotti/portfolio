@@ -1,8 +1,12 @@
+import { useSite } from '../theme'
+
 function SectionLabel({ number, children }) {
+  const { t } = useSite()
   return (
     <div className="section-label">
       <span>{number}</span>
-      <p>{children}</p>
+      <i />
+      <p>{t(children)}</p>
     </div>
   )
 }

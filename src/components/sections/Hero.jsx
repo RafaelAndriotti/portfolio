@@ -1,27 +1,30 @@
-import ArrowIcon from '../ArrowIcon'
+import { ArrowIcon } from '../icons'
 import heroImage from '../../assets/hero.png'
+import { hero } from '../../data/portfolio'
+import { useSite } from '../../theme'
 
 function Hero() {
+  const { t } = useSite()
+
   return (
     <section className="hero section" id="inicio">
+      <div className="hero-glow" aria-hidden="true" />
+
       <div className="hero-copy">
         <p className="eyebrow">
-          <span /> Disponível para novos projetos
+          <span /> {t(hero.eyebrow)}
         </p>
         <h1>
-          Eu construo o back-end que <em>sustenta o produto.</em>
+          {t(hero.titleStart)}
+          <em>{t(hero.titleAccent)}</em>
         </h1>
-        <p className="hero-description">
-          Sou <strong>Rafael</strong>, desenvolvedor back-end. Trabalho com
-          APIs REST em Node.js e TypeScript, modelagem de dados em PostgreSQL e
-          MongoDB, e código que ainda faz sentido seis meses depois.
-        </p>
+        <p className="hero-description">{t(hero.description)}</p>
         <div className="hero-actions">
           <a className="button button-primary" href="#projetos">
-            Ver projetos <ArrowIcon />
+            {t(hero.primaryCta)} <ArrowIcon />
           </a>
-          <a className="text-link" href="#sobre">
-            Mais sobre mim
+          <a className="btn-ghost" href="#sobre">
+            {t(hero.secondaryCta)}
           </a>
         </div>
       </div>
