@@ -11,9 +11,8 @@ function Experience() {
             Experiência construída entre <em>estudo e prática.</em>
           </h2>
           <p>
-            Cada serviço construído é uma oportunidade de fortalecer
-            fundamentos, testar decisões de arquitetura e transformar
-            aprendizado em código que roda.
+            Não venho de anos de empresa. Venho de projetos que eu levantei do
+            zero, quebrei e arrumei até funcionar direito.
           </p>
         </div>
 

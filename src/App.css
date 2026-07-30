@@ -42,8 +42,8 @@ main section[id] {
 }
 
 .brand {
-  font: 800 1.65rem/1 'Manrope', sans-serif;
-  letter-spacing: -0.08em;
+  font: 700 1.4rem/1 var(--mono);
+  letter-spacing: -0.03em;
   text-decoration: none;
 }
 
@@ -59,8 +59,9 @@ main section[id] {
 
 .nav a,
 .footer a {
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 400;
   text-decoration: none;
 }
 
@@ -98,7 +99,6 @@ main section[id] {
   gap: 6px;
   padding: 0;
   border: 1px solid var(--ink);
-  border-radius: 50%;
   color: var(--ink);
   background: transparent;
   cursor: pointer;
@@ -120,11 +120,10 @@ main section[id] {
 }
 
 .header-cta {
-  padding: 11px 18px;
+  padding: 10px 17px;
   border: 1px solid var(--ink);
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-family: var(--mono);
+  font-size: 0.78rem;
   text-decoration: none;
   transition: color 180ms ease, background 180ms ease;
 }
@@ -135,7 +134,7 @@ main section[id] {
 }
 
 .hero {
-  min-height: 690px;
+  min-height: 620px;
   display: grid;
   grid-template-columns: 1.18fr 0.82fr;
   align-items: center;
@@ -146,11 +145,11 @@ main section[id] {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 0 0 24px;
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
+  margin: 0 0 26px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 .eyebrow span {
@@ -168,25 +167,23 @@ p {
   margin-top: 0;
 }
 
-h1,
-h2,
-h3 {
-  font-family: 'Manrope', sans-serif;
-}
-
 h1 {
-  max-width: 730px;
-  margin-bottom: 28px;
-  font-size: clamp(3.4rem, 6.3vw, 5.9rem);
-  line-height: 0.98;
-  letter-spacing: -0.075em;
+  max-width: 700px;
+  margin-bottom: 26px;
+  font-size: clamp(2.6rem, 5vw, 4.15rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
 }
 
+/* Marca a ênfase com um traço, em vez de trocar a família tipográfica. */
 h1 em,
 h2 em {
-  color: var(--coral-text);
-  font-family: Georgia, serif;
-  font-weight: 400;
+  font-style: normal;
+  background: linear-gradient(var(--coral), var(--coral)) 0 92% / 100% 0.09em
+    no-repeat;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .hero-description {
@@ -212,19 +209,17 @@ h2 em {
   align-items: center;
   justify-content: center;
   gap: 14px;
-  padding: 16px 23px;
+  padding: 15px 22px;
   border: 0;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.88rem;
+  font-weight: 500;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: transform 180ms ease;
 }
 
 .button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(29, 29, 27, 0.15);
+  transform: translateY(-2px);
 }
 
 .button:disabled {
@@ -233,7 +228,6 @@ h2 em {
 }
 
 .button:disabled:hover {
-  box-shadow: none;
   transform: none;
 }
 
@@ -278,90 +272,43 @@ h2 em {
 }
 
 .hero-visual {
-  position: relative;
   min-height: 470px;
   display: grid;
-  place-items: center;
+  align-content: center;
+  justify-items: center;
+  gap: 22px;
 }
 
 .portrait-art {
-  z-index: 2;
-  width: 295px;
-  height: 370px;
+  width: 300px;
+  height: 366px;
   display: grid;
   overflow: hidden;
   place-items: center;
-  padding: 24px;
-  border: 2px solid var(--ink);
-  border-radius: 48% 48% 18px 18px;
+  padding: 22px;
+  border: 1px solid var(--ink);
   background: #fffdf7;
-  box-shadow: 14px 14px 0 var(--ink);
-  transform: rotate(3deg);
+  box-shadow: 8px 8px 0 var(--ink);
 }
 
 .portrait-art img {
-  width: 112%;
+  width: 108%;
   height: auto;
-  transform: rotate(-3deg);
-}
-
-.orbit {
-  position: absolute;
-  border: 1px solid var(--ink);
-  border-radius: 50%;
-}
-
-.orbit-one {
-  width: 430px;
-  height: 210px;
-  transform: rotate(-20deg);
-}
-
-.orbit-two {
-  width: 430px;
-  height: 210px;
-  border-color: var(--coral);
-  transform: rotate(55deg);
-}
-
-.code-sticker {
-  z-index: 3;
-  position: absolute;
-  top: 70px;
-  right: 6px;
-  display: grid;
-  width: 80px;
-  height: 80px;
-  place-items: center;
-  border: 2px solid var(--ink);
-  border-radius: 50%;
-  font: 700 1.15rem 'Manrope', sans-serif;
-  background: var(--lime);
-  transform: rotate(12deg);
 }
 
 .visual-note {
-  z-index: 3;
-  position: absolute;
-  right: 4px;
-  bottom: 26px;
   margin: 0;
-  padding: 9px 13px;
-  border: 1px solid var(--ink);
-  background: var(--paper);
+  color: #62625d;
+  font-family: var(--mono);
   font-size: 0.72rem;
-  font-weight: 600;
-  transform: rotate(-3deg);
+  font-weight: 500;
 }
 
 .skills-strip {
   position: relative;
-  width: calc(100% + 20px);
-  margin-left: -10px;
   overflow: hidden;
   color: white;
   background: var(--ink);
-  transform: rotate(-1.2deg);
 }
 
 .skills-strip.is-paused > div {
@@ -373,13 +320,13 @@ h2 em {
   position: absolute;
   top: 50%;
   right: 22px;
-  padding: 7px 11px;
+  padding: 6px 10px;
   border: 1px solid var(--paper);
-  border-radius: 999px;
   color: var(--ink);
   background: var(--lime);
-  font-size: 0.65rem;
-  font-weight: 700;
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  font-weight: 500;
   cursor: pointer;
   transform: translateY(-50%);
 }
@@ -391,10 +338,9 @@ h2 em {
 }
 
 .skills-strip span {
-  padding: 17px 24px;
-  font: 600 0.85rem 'Manrope', sans-serif;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  padding: 15px 22px;
+  font: 500 0.78rem var(--mono);
+  letter-spacing: 0.02em;
 }
 
 .skills-strip b {
@@ -412,34 +358,34 @@ h2 em {
 .skills-section,
 .projects,
 .resume {
-  padding-top: 150px;
-  padding-bottom: 150px;
+  padding-top: 110px;
+  padding-bottom: 110px;
 }
 
 .section-label {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 46px;
+  margin-bottom: 34px;
 }
 
 .section-label span {
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   place-items: center;
   border: 1px solid var(--ink);
-  border-radius: 50%;
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
 }
 
 .section-label p {
   margin: 0;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .about-content {
@@ -454,9 +400,10 @@ h2 em {
 .experience-heading h2,
 .resume-copy h2 {
   margin-bottom: 0;
-  font-size: clamp(2.5rem, 5vw, 4.4rem);
-  line-height: 1.08;
-  letter-spacing: -0.065em;
+  font-size: clamp(1.85rem, 3.1vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
 }
 
 .about-text {
@@ -561,15 +508,16 @@ h2 em {
 .skill-number {
   align-self: flex-end;
   color: #62625d;
-  font: 600 0.72rem 'Manrope', sans-serif;
+  font: 500 0.72rem var(--mono);
 }
 
 .skill-card h3 {
   max-width: 250px;
-  margin: 42px 0 18px;
-  font-size: 1.65rem;
-  line-height: 1.12;
-  letter-spacing: -0.045em;
+  margin: 38px 0 16px;
+  font-size: 1.28rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
 }
 
 .skill-card > p,
@@ -587,9 +535,10 @@ h2 em {
 .skill-evidence strong {
   display: block;
   margin-bottom: 8px;
+  color: #62625d;
+  font-family: var(--mono);
   font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .skill-evidence p {
@@ -610,11 +559,11 @@ h2 em {
 
 .skill-card li,
 .experience-content li {
-  padding: 6px 10px;
+  padding: 5px 9px;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  font-family: var(--mono);
   font-size: 0.68rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .experience {
@@ -623,8 +572,8 @@ h2 em {
 }
 
 .experience-inner {
-  padding-top: 150px;
-  padding-bottom: 150px;
+  padding-top: 110px;
+  padding-bottom: 110px;
 }
 
 .experience .section-label span {
@@ -654,7 +603,7 @@ h2 em {
 }
 
 .experience-heading h2 em {
-  color: var(--lime);
+  background-image: linear-gradient(var(--lime), var(--lime));
 }
 
 .experience-heading > p {
@@ -678,14 +627,13 @@ h2 em {
 }
 
 .experience-number {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
-  border-radius: 50%;
   color: var(--ink);
   background: var(--lime);
-  font: 700 0.68rem 'Manrope', sans-serif;
+  font: 500 0.68rem var(--mono);
 }
 
 .experience-meta strong,
@@ -705,8 +653,9 @@ h2 em {
 
 .experience-content h3 {
   margin-bottom: 14px;
-  font-size: 1.65rem;
-  letter-spacing: -0.045em;
+  font-size: 1.28rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 .experience-content > p {
@@ -721,9 +670,9 @@ h2 em {
 }
 
 .stats dd {
-  margin-bottom: 4px;
-  font: 700 2.2rem 'Manrope', sans-serif;
-  letter-spacing: -0.06em;
+  margin-bottom: 6px;
+  font: 600 1.85rem var(--mono);
+  letter-spacing: -0.03em;
 }
 
 .stats dt {
@@ -782,26 +731,21 @@ h2 em {
   position: absolute;
   top: 22px;
   left: 25px;
-  font: 700 0.8rem 'Manrope', sans-serif;
+  font: 500 0.75rem var(--mono);
 }
 
 .endpoint-mockup {
   width: min(78%, 340px);
   min-height: 245px;
-  border: 2px solid var(--ink);
+  border: 1px solid var(--ink);
   font-family: var(--mono);
   background: #faf8f2;
-  box-shadow: 12px 12px 0 rgba(29, 29, 27, 0.9);
-  transform: rotate(-3deg);
+  box-shadow: 8px 8px 0 var(--ink);
   transition: transform 250ms ease;
 }
 
-.project-card:nth-child(even) .endpoint-mockup {
-  transform: rotate(3deg);
-}
-
 .project-card:hover .endpoint-mockup {
-  transform: rotate(0) translateY(-6px);
+  transform: translateY(-5px);
 }
 
 .endpoint-bar {
@@ -809,18 +753,18 @@ h2 em {
   align-items: center;
   gap: 9px;
   overflow: hidden;
-  padding: 9px 11px;
-  border-bottom: 2px solid var(--ink);
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--ink);
 }
 
 .endpoint-bar b {
   flex-shrink: 0;
   padding: 4px 7px;
-  border: 1.5px solid var(--ink);
+  border: 1px solid var(--ink);
   background: var(--lime);
   font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .endpoint-bar b[data-method='POST'] {
@@ -881,18 +825,18 @@ h2 em {
 }
 
 .project-info > div > p {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: #62625d;
+  font-family: var(--mono);
   font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .project-info h3 {
-  margin-bottom: 22px;
-  font-size: 2rem;
-  letter-spacing: -0.05em;
+  margin-bottom: 20px;
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .project-info > p {
@@ -911,11 +855,11 @@ h2 em {
 }
 
 .project-info li {
-  padding: 6px 11px;
+  padding: 5px 10px;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  font-family: var(--mono);
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .project-info > a {
@@ -930,12 +874,12 @@ h2 em {
 
 .project-status {
   align-self: flex-start;
-  padding: 7px 11px;
+  padding: 6px 10px;
   border: 1px dashed rgba(29, 29, 27, 0.42);
-  border-radius: 999px;
   color: #62625d;
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
 }
 
 .repos {
@@ -955,8 +899,9 @@ h2 em {
 
 .repos-heading h3 {
   margin: 0;
-  font-size: 1.7rem;
-  letter-spacing: -0.045em;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 .repo-grid {
@@ -985,8 +930,8 @@ h2 em {
 
 .repo-card h4 {
   margin: 0 0 13px;
-  font: 700 1.05rem 'Manrope', sans-serif;
-  letter-spacing: -0.035em;
+  font: 600 0.96rem var(--mono);
+  letter-spacing: -0.01em;
 }
 
 .repo-card h4 a {
@@ -1024,8 +969,9 @@ h2 em {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 0.71rem;
-  font-weight: 600;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
 }
 
 .repo-language i {
@@ -1062,11 +1008,11 @@ h2 em {
 }
 
 .repo-footer li {
-  padding: 5px 9px;
+  padding: 4px 8px;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  font-family: var(--mono);
   font-size: 0.65rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .resume-card {
@@ -1074,7 +1020,7 @@ h2 em {
   grid-template-columns: 1.08fr 0.92fr;
   border: 1px solid var(--ink);
   background: var(--lime);
-  box-shadow: 14px 14px 0 var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
 }
 
 .resume-copy {
@@ -1083,10 +1029,9 @@ h2 em {
 
 .resume-kicker {
   margin-bottom: 18px;
+  font-family: var(--mono);
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .resume-copy h2 {
@@ -1106,11 +1051,11 @@ h2 em {
 }
 
 .resume-highlights li {
-  padding: 7px 12px;
+  padding: 6px 11px;
   border: 1px solid rgba(29, 29, 27, 0.38);
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
 }
 
 .resume-actions {
@@ -1139,11 +1084,10 @@ h2 em {
   min-height: 470px;
   align-self: center;
   justify-self: center;
-  padding: 34px;
-  border: 2px solid var(--ink);
+  padding: 32px;
+  border: 1px solid var(--ink);
   background: #fffdf7;
-  box-shadow: 12px 12px 0 rgba(29, 29, 27, 0.92);
-  transform: rotate(3deg);
+  box-shadow: 8px 8px 0 var(--ink);
 }
 
 .document-topline {
@@ -1152,28 +1096,27 @@ h2 em {
   justify-content: space-between;
   margin-bottom: 70px;
   padding-bottom: 14px;
-  border-bottom: 2px solid var(--ink);
-  font: 700 0.72rem 'Manrope', sans-serif;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  border-bottom: 1px solid var(--ink);
+  font: 500 0.72rem var(--mono);
+  letter-spacing: 0.02em;
 }
 
 .document-topline b {
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   place-items: center;
-  border-radius: 50%;
   color: var(--paper);
   background: var(--coral);
   font-size: 0.63rem;
+  font-weight: 600;
 }
 
 .resume-document > strong {
   display: block;
   max-width: 220px;
-  font: 800 2rem/1.05 'Manrope', sans-serif;
-  letter-spacing: -0.065em;
+  font: 600 1.45rem/1.2 var(--sans);
+  letter-spacing: -0.02em;
 }
 
 .document-lines {
@@ -1211,92 +1154,79 @@ h2 em {
 
 .resume-document > p {
   margin: 0;
+  color: #62625d;
+  font-family: var(--mono);
   font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-weight: 500;
 }
 
+/* Faixa sangrada, mas com o texto alinhado à mesma coluna do resto da página. */
 .contact {
-  position: relative;
   width: 100%;
   max-width: none;
-  min-height: 590px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 100px 24px;
+  align-items: flex-start;
+  padding: 100px max(24px, calc((100vw - 1180px) / 2));
   color: white;
-  text-align: center;
   background: #315fd9;
 }
 
 .contact .eyebrow {
-  margin-bottom: 22px;
+  margin-bottom: 20px;
+  /* 0.75 reprovava em AA para texto pequeno sobre o azul. */
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .contact h2 {
-  z-index: 1;
-  max-width: 810px;
-  margin-bottom: 22px;
-  font-size: clamp(3rem, 6vw, 5.4rem);
-  line-height: 1;
-  letter-spacing: -0.07em;
+  max-width: 700px;
+  margin-bottom: 20px;
+  font-size: clamp(1.85rem, 3.4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
 }
 
 .contact > p:not(.eyebrow) {
-  z-index: 1;
-  max-width: 580px;
+  max-width: 560px;
   margin-bottom: 34px;
+  color: rgba(255, 255, 255, 0.86);
   line-height: 1.7;
 }
 
 .contact-actions {
-  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
+  gap: 18px 32px;
+}
+
+.contact-socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+}
+
+.contact-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: border-color 180ms ease;
+}
+
+.contact-socials a:hover {
+  border-bottom-color: white;
 }
 
 .button-light {
   color: var(--ink);
   background: var(--lime);
-}
-
-.button-ghost {
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  color: white;
-  background: transparent;
-}
-
-.button-ghost:hover {
-  color: var(--ink);
-  background: white;
-}
-
-.contact-shape {
-  position: absolute;
-  border: 2px solid rgba(255, 255, 255, 0.55);
-}
-
-.shape-one {
-  top: -100px;
-  left: -90px;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-}
-
-.shape-two {
-  right: -90px;
-  bottom: -170px;
-  width: 390px;
-  height: 390px;
-  transform: rotate(25deg);
 }
 
 .footer {
@@ -1341,7 +1271,8 @@ h2 em {
   }
 
   .hero-visual {
-    min-height: 480px;
+    min-height: 0;
+    justify-items: start;
   }
 
   .about-content {
@@ -1487,7 +1418,7 @@ h2 em {
   }
 
   h1 {
-    font-size: clamp(3.2rem, 15vw, 4.5rem);
+    font-size: clamp(2.15rem, 8.5vw, 2.85rem);
   }
 
   .hero-description {
@@ -1501,31 +1432,21 @@ h2 em {
   }
 
   .hero-visual {
-    min-height: 390px;
-    transform: scale(0.86);
+    min-height: 0;
+    justify-items: start;
   }
 
   .portrait-art {
     width: 255px;
-    height: 325px;
-  }
-
-  .orbit-one,
-  .orbit-two {
-    width: 350px;
-    height: 170px;
-  }
-
-  .code-sticker {
-    right: -5px;
+    height: 320px;
   }
 
   .about,
   .skills-section,
   .projects,
   .resume {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   .about h2,
@@ -1533,7 +1454,7 @@ h2 em {
   .section-heading h2,
   .experience-heading h2,
   .resume-copy h2 {
-    font-size: 2.65rem;
+    font-size: 1.72rem;
   }
 
   .stats {
@@ -1575,8 +1496,8 @@ h2 em {
   }
 
   .experience-inner {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   .experience-heading {
@@ -1641,13 +1562,9 @@ h2 em {
   }
 
   .contact-actions {
-    align-items: stretch;
+    align-items: flex-start;
     flex-direction: column;
-    width: min(100%, 320px);
-  }
-
-  .resume-card {
-    box-shadow: 8px 8px 0 var(--ink);
+    gap: 26px;
   }
 
   .resume-copy {
@@ -1672,11 +1589,11 @@ h2 em {
 
   .contact {
     width: 100%;
-    min-height: 560px;
+    padding: 80px 16px;
   }
 
   .contact h2 {
-    font-size: 3.3rem;
+    font-size: 1.72rem;
   }
 
   .ticker-control {

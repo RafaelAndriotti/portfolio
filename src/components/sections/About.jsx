@@ -8,18 +8,18 @@ function About() {
 
       <div className="about-content">
         <h2>
-          A parte que ninguém vê é a que <em>sustenta tudo.</em>
+          Back-end é onde eu <em>escolhi trabalhar.</em>
         </h2>
         <div className="about-text">
           <p>
-            Gosto de trabalhar na camada que fica por baixo da interface: APIs,
-            regras de negócio e banco de dados. É ali que uma decisão bem
-            tomada evita meses de retrabalho — e é ali que eu prefiro estar.
+            Trabalho na camada que fica atrás da interface: rotas, regras de
+            negócio e banco de dados. É onde as decisões custam caro se forem
+            mal tomadas, e é a parte que eu gosto de resolver.
           </p>
           <p>
-            Minha trajetória vem de estudo contínuo e projetos práticos,
-            construídos do zero em vez de partir de um boilerplate pronto, para
-            entender de fato o que acontece entre a requisição e a resposta.
+            Aprendi construindo. Meus projetos começam de um diretório vazio,
+            não de um boilerplate, porque é assim que eu entendo o que
+            acontece entre a requisição e a resposta.
           </p>
           <a className="text-link" href="#experiencia">
             Conheça minha trajetória <ArrowIcon />
@@ -37,8 +37,8 @@ function About() {
           <dt>APIs REST próprias</dt>
         </div>
         <div>
-          <dd>∞</dd>
-          <dt>Vontade de aprender</dt>
+          <dd>4</dd>
+          <dt>Linguagens em uso</dt>
         </div>
       </dl>
     </section>

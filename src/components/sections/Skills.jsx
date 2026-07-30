@@ -8,12 +8,12 @@ function Skills() {
         <div>
           <SectionLabel number="02">Habilidades</SectionLabel>
           <h2>
-            Ferramentas que ganham valor na <em>prática.</em>
+            O que eu uso, e <em>para quê.</em>
           </h2>
         </div>
         <p>
-          Mais do que uma lista de tecnologias, estas são as frentes que uso
-          para construir serviços estáveis e fáceis de manter.
+          Três frentes que aparecem em praticamente todo serviço que eu
+          construo, com as ferramentas que uso em cada uma.
         </p>
       </div>
 

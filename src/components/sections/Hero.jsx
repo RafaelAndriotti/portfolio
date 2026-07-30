@@ -12,9 +12,9 @@ function Hero() {
           Eu construo o back-end que <em>sustenta o produto.</em>
         </h1>
         <p className="hero-description">
-          Olá, sou <strong>Rafael</strong>, desenvolvedor back-end focado em
-          APIs REST bem estruturadas, modelagem de dados consistente e código
-          que continua legível meses depois.
+          Sou <strong>Rafael</strong>, desenvolvedor back-end. Trabalho com
+          APIs REST em Node.js e TypeScript, modelagem de dados em PostgreSQL e
+          MongoDB, e código que ainda faz sentido seis meses depois.
         </p>
         <div className="hero-actions">
           <a className="button button-primary" href="#projetos">
@@ -27,13 +27,10 @@ function Hero() {
       </div>
 
       <div className="hero-visual" aria-hidden="true">
-        <div className="orbit orbit-one" />
-        <div className="orbit orbit-two" />
         <div className="portrait-art">
           <img src={heroImage} alt="" />
         </div>
-        <div className="code-sticker">{'{ }'}</div>
-        <p className="visual-note">Node · SQL · APIs REST</p>
+        <p className="visual-note">Node · TypeScript · SQL</p>
       </div>
     </section>
   )

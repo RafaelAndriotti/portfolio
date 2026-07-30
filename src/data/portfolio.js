@@ -194,7 +194,7 @@ export const repositories = [
 export const contact = {
   email: 'rafael.rebelo47@gmail.com',
   github: GITHUB_USER,
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/rafaelandriotti/',
 }
 
 export const resume = {

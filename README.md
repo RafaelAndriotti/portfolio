@@ -78,14 +78,25 @@ Definidos em `:root` dentro de [`src/index.css`](src/index.css):
 
 | Token | Valor | Uso |
 | --- | --- | --- |
+| `--sans` | IBM Plex Sans | Títulos e texto corrido |
+| `--mono` | IBM Plex Mono | Rótulos, números, tags e mockups de endpoint |
 | `--ink` | `#1d1d1b` | Texto, bordas e fundos escuros |
 | `--paper` | `#f5f2ea` | Fundo padrão |
-| `--coral` | `#ff6846` | Destaque primário |
+| `--coral` | `#ff6846` | Destaque primário e traço de ênfase |
 | `--coral-text` | `#b93c22` | Destaque em texto (contraste AA) |
 | `--blue` | `#4778ff` | Destaque secundário |
 | `--lime` | `#c8ff4d` | Destaque terciário |
 | `--line` | `rgba(29, 29, 27, .18)` | Divisórias sutis |
-| `--mono` | stack monoespaçada do sistema | Mockups de endpoint |
+
+Regras que mantêm o visual coeso:
+
+- **Uma família só**, em dois cortes: IBM Plex Sans para leitura, IBM Plex Mono
+  para tudo que é técnico ou numérico.
+- **Sem rotação.** Nenhum elemento é inclinado.
+- **Cantos retos** em botões, tags e cards. Círculo só em indicadores de status.
+- **Sombra dura de 8px** (`8px 8px 0`), sempre no mesmo offset, nunca desfocada.
+- **Ênfase por traço**, com `background-image` em `h1 em`/`h2 em` — não por troca
+  de família tipográfica.
 
 ## Acessibilidade
 
