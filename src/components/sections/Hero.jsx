@@ -1,7 +1,7 @@
 import { ArrowIcon } from '../icons'
 import { footer, hero } from '../../data/portfolio'
 import { useSite } from '../../theme'
-import foto from './assets/foto-perfil.jpeg'
+import foto from '../../assets/foto-perfil.jpeg'
 
 function Hero() {
   const { t } = useSite()
