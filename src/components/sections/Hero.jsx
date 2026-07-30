@@ -1,5 +1,4 @@
 import { ArrowIcon } from '../icons'
-import heroImage from '../../assets/hero.png'
 import { hero } from '../../data/portfolio'
 import { useSite } from '../../theme'
 
@@ -29,9 +28,9 @@ function Hero() {
         </div>
       </div>
 
-      <div className="hero-visual" aria-hidden="true">
+      <div className="hero-visual">
         <div className="portrait-art">
-          <img src={heroImage} alt="" />
+          <img src="/foto-perfil.jpeg" alt="Rafael Andriotti" />
         </div>
         <p className="visual-note">Node · TypeScript · SQL</p>
       </div>

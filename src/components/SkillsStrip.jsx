@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import { technologies, ui } from '../data/portfolio'
 import { useSite } from '../theme'
@@ -25,6 +26,8 @@ function SkillsStrip() {
       aria-label="Tecnologias em destaque"
     >
       <div className="strip-track" aria-hidden="true">
+        <Row />
+        <Row />
         <Row />
         <Row />
       </div>
