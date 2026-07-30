@@ -237,15 +237,22 @@ h2 em {
   transform: none;
 }
 
-.button svg,
-.text-link svg,
-.project-info > a svg {
+.button svg:not(.github-icon),
+.text-link svg:not(.github-icon),
+.project-info > a svg:not(.github-icon) {
   width: 18px;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.7;
+}
+
+.github-icon {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+  stroke: none;
 }
 
 .button-primary {
@@ -778,63 +785,92 @@ h2 em {
   font: 700 0.8rem 'Manrope', sans-serif;
 }
 
-.browser-mockup {
-  width: 70%;
+.endpoint-mockup {
+  width: min(78%, 340px);
   min-height: 245px;
   border: 2px solid var(--ink);
+  font-family: var(--mono);
   background: #faf8f2;
   box-shadow: 12px 12px 0 rgba(29, 29, 27, 0.9);
   transform: rotate(-3deg);
   transition: transform 250ms ease;
 }
 
-.project-card:nth-child(even) .browser-mockup {
+.project-card:nth-child(even) .endpoint-mockup {
   transform: rotate(3deg);
 }
 
-.project-card:hover .browser-mockup {
+.project-card:hover .endpoint-mockup {
   transform: rotate(0) translateY(-6px);
 }
 
-.browser-bar {
-  height: 28px;
+.endpoint-bar {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 0 10px;
+  gap: 9px;
+  overflow: hidden;
+  padding: 9px 11px;
   border-bottom: 2px solid var(--ink);
 }
 
-.browser-bar i {
-  width: 7px;
-  height: 7px;
-  border: 1px solid var(--ink);
+.endpoint-bar b {
+  flex-shrink: 0;
+  padding: 4px 7px;
+  border: 1.5px solid var(--ink);
+  background: var(--lime);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.endpoint-bar b[data-method='POST'] {
+  background: var(--coral);
+}
+
+.endpoint-bar b[data-method='PUT'] {
+  background: var(--blue);
+}
+
+.endpoint-bar span {
+  overflow: hidden;
+  color: #4a4a45;
+  font-size: 0.66rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.endpoint-body {
+  padding: 24px 18px 28px;
+}
+
+.endpoint-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 20px;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.endpoint-status i {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-}
-
-.mockup-content {
-  padding: 35px 32px;
-}
-
-.mockup-content div {
-  height: 13px;
-  margin-bottom: 15px;
   background: var(--ink);
+  box-shadow: 0 0 0 4px rgba(29, 29, 27, 0.14);
 }
 
-.mockup-content div:first-child {
-  width: 66%;
-  height: 42px;
-  background: transparent;
-  border: 2px solid var(--ink);
+.endpoint-payload {
+  display: grid;
+  gap: 10px;
+  color: #3a3a36;
+  font-size: 0.68rem;
+  line-height: 1.2;
 }
 
-.mockup-content div:nth-child(2) {
-  width: 85%;
-}
-
-.mockup-content div:nth-child(3) {
-  width: 48%;
+.endpoint-line {
+  padding-left: 18px;
 }
 
 .project-info {
@@ -899,6 +935,137 @@ h2 em {
   border-radius: 999px;
   color: #62625d;
   font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.repos {
+  margin-top: 95px;
+  padding-top: 55px;
+  border-top: 1px solid var(--ink);
+}
+
+.repos-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.repos-heading h3 {
+  margin: 0;
+  font-size: 1.7rem;
+  letter-spacing: -0.045em;
+}
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.repo-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 24px 22px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.repo-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 var(--ink);
+}
+
+.repo-card h4 {
+  margin: 0 0 13px;
+  font: 700 1.05rem 'Manrope', sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.repo-card h4 a {
+  text-decoration: none;
+}
+
+.repo-card h4 a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.repo-card:hover h4 a {
+  color: var(--coral-text);
+}
+
+.repo-card > p {
+  margin: 0 0 24px;
+  color: #595954;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.repo-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.repo-language {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.71rem;
+  font-weight: 600;
+}
+
+.repo-language i {
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.repo-language[data-language='JavaScript'] i {
+  background: var(--lime);
+}
+
+.repo-language[data-language='TypeScript'] i {
+  background: var(--blue);
+}
+
+.repo-language[data-language='Java'] i {
+  background: var(--coral);
+}
+
+.repo-language[data-language='Python'] i {
+  background: var(--ink);
+}
+
+.repo-footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.repo-footer li {
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.65rem;
   font-weight: 600;
 }
 
@@ -1086,10 +1253,29 @@ h2 em {
   line-height: 1.7;
 }
 
-.button-light {
+.contact-actions {
   z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.button-light {
   color: var(--ink);
   background: var(--lime);
+}
+
+.button-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  color: white;
+  background: transparent;
+}
+
+.button-ghost:hover {
+  color: var(--ink);
+  background: white;
 }
 
 .contact-shape {
@@ -1432,12 +1618,32 @@ h2 em {
     border-bottom: 1px solid var(--ink);
   }
 
-  .browser-mockup {
-    min-height: 200px;
+  .endpoint-mockup {
+    width: min(86%, 320px);
+    min-height: 210px;
   }
 
   .project-info {
     padding: 34px 26px;
+  }
+
+  .repos {
+    margin-top: 65px;
+    padding-top: 42px;
+  }
+
+  .repos-heading {
+    margin-bottom: 28px;
+  }
+
+  .repo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-actions {
+    align-items: stretch;
+    flex-direction: column;
+    width: min(100%, 320px);
   }
 
   .resume-card {

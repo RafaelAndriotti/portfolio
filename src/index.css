@@ -14,6 +14,8 @@
   --blue: #4778ff;
   --lime: #c8ff4d;
   --line: rgba(29, 29, 27, 0.18);
+  --mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
+    'Liberation Mono', monospace;
 }
 
 * {

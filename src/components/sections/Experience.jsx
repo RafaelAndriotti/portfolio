@@ -11,8 +11,9 @@ function Experience() {
             Experiência construída entre <em>estudo e prática.</em>
           </h2>
           <p>
-            Cada projeto é uma oportunidade para fortalecer fundamentos, testar
-            soluções e transformar aprendizado em produto.
+            Cada serviço construído é uma oportunidade de fortalecer
+            fundamentos, testar decisões de arquitetura e transformar
+            aprendizado em código que roda.
           </p>
         </div>
 

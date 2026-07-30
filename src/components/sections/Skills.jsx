@@ -12,8 +12,8 @@ function Skills() {
           </h2>
         </div>
         <p>
-          Mais do que uma lista de tecnologias, estas são as áreas que uso para
-          construir interfaces consistentes e evoluir cada projeto.
+          Mais do que uma lista de tecnologias, estas são as frentes que uso
+          para construir serviços estáveis e fáceis de manter.
         </p>
       </div>
 

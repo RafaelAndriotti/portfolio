@@ -8,17 +8,18 @@ function About() {
 
       <div className="about-content">
         <h2>
-          Tecnologia e criatividade trabalhando <em>juntas.</em>
+          A parte que ninguém vê é a que <em>sustenta tudo.</em>
         </h2>
         <div className="about-text">
           <p>
-            Gosto de construir produtos digitais que sejam simples por fora e
-            bem pensados por dentro. Meu trabalho combina desenvolvimento,
-            atenção aos detalhes e foco nas pessoas que usarão cada projeto.
+            Gosto de trabalhar na camada que fica por baixo da interface: APIs,
+            regras de negócio e banco de dados. É ali que uma decisão bem
+            tomada evita meses de retrabalho — e é ali que eu prefiro estar.
           </p>
           <p>
-            Minha trajetória é construída por estudos e projetos práticos, com
-            curiosidade para aprender e cuidado para evoluir a cada nova entrega.
+            Minha trajetória vem de estudo contínuo e projetos práticos,
+            construídos do zero em vez de partir de um boilerplate pronto, para
+            entender de fato o que acontece entre a requisição e a resposta.
           </p>
           <a className="text-link" href="#experiencia">
             Conheça minha trajetória <ArrowIcon />
@@ -28,12 +29,12 @@ function About() {
 
       <dl className="stats" aria-label="Destaques profissionais">
         <div>
-          <dd>+10</dd>
-          <dt>Projetos concluídos</dt>
+          <dd>+15</dd>
+          <dt>Repositórios públicos</dt>
         </div>
         <div>
-          <dd>100%</dd>
-          <dt>Foco em qualidade</dt>
+          <dd>3</dd>
+          <dt>APIs REST próprias</dt>
         </div>
         <div>
           <dd>∞</dd>

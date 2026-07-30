@@ -48,12 +48,12 @@ function Resume() {
           <h2>Minha trajetória, reunida em uma página.</h2>
           <p>
             Uma visão direta das minhas habilidades, estudos e experiências com
-            desenvolvimento front-end.
+            desenvolvimento back-end.
           </p>
           <ul className="resume-highlights">
-            <li>Desenvolvimento front-end</li>
-            <li>Interfaces responsivas</li>
-            <li>React e JavaScript</li>
+            <li>Desenvolvimento back-end</li>
+            <li>APIs REST e modelagem de dados</li>
+            <li>Node.js, TypeScript e SQL</li>
           </ul>
           <ResumeActions />
         </div>
@@ -63,7 +63,7 @@ function Resume() {
             <span>Rafael</span>
             <b>CV</b>
           </div>
-          <strong>Desenvolvedor front-end</strong>
+          <strong>Desenvolvedor back-end</strong>
           <div className="document-lines">
             <span />
             <span />
@@ -73,7 +73,7 @@ function Resume() {
             <span />
             <span />
           </div>
-          <p>React · JavaScript · UI</p>
+          <p>Node · TypeScript · SQL</p>
         </div>
       </div>
     </section>
