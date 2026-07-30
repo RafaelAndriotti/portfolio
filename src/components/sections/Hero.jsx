@@ -1,6 +1,7 @@
 import { ArrowIcon } from '../icons'
-import { hero } from '../../data/portfolio'
+import { footer, hero } from '../../data/portfolio'
 import { useSite } from '../../theme'
+import foto from './assets/foto-perfil.jpeg'
 
 function Hero() {
   const { t } = useSite()
@@ -30,7 +31,7 @@ function Hero() {
 
       <div className="hero-visual">
         <div className="portrait-art">
-          <img src="/foto-perfil.jpeg" alt="Rafael Andriotti" />
+          <img src={foto} alt="Rafael Andriotti" />
         </div>
         <p className="visual-note">Node · TypeScript · SQL</p>
       </div>
