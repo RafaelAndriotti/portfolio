@@ -127,7 +127,7 @@ export const techStack = [
     name: 'Python',
     category: { pt: 'Linguagem', en: 'Language' },
     meta: [
-      { label: WHERE, value: 'restaurante-express · livraria' },
+      { label: WHERE, value: 'restaurante-express' },
       { label: FOR, value: { pt: 'Exercícios de lógica e orientação a objetos', en: 'Logic and object-oriented exercises' } },
       { label: WITH, value: { pt: 'Estudos da faculdade', en: 'University coursework' } },
     ],
@@ -182,7 +182,7 @@ export const about = {
   ],
   link: { pt: 'Conheça minha trajetória', en: 'See how I got here' },
   stats: [
-    { value: '+15', label: { pt: 'Repositórios públicos', en: 'Public repositories' } },
+    { value: '13', label: { pt: 'Repositórios públicos', en: 'Public repositories' } },
     { value: '3', label: { pt: 'APIs REST próprias', en: 'REST APIs of my own' } },
     { value: '4', label: { pt: 'Linguagens em uso', en: 'Languages in use' } },
   ],
@@ -457,28 +457,6 @@ export const repositories = [
     url: `${GITHUB_USER}/Quadro-Kanban`,
   },
   {
-    name: 'Monitor-de-Atividades',
-    icon: 'Nodejs',
-    description: {
-      pt: 'Painel para registro de atividades com servidor Node.js e persistência local em SQLite.',
-      en: 'An activity-logging panel with a Node.js server and local SQLite persistence.',
-    },
-    language: 'JavaScript',
-    stack: ['Node.js', 'SQLite'],
-    url: `${GITHUB_USER}/Monitor-de-Atividades`,
-  },
-  {
-    name: 'bot-promocoes',
-    icon: 'Nodejs',
-    description: {
-      pt: 'Bot que acompanha promoções de jogos na Steam, rodando como serviço automatizado em Node.js.',
-      en: 'A bot that tracks Steam game deals, running as an automated Node.js service.',
-    },
-    language: 'JavaScript',
-    stack: ['Node.js', 'Automação'],
-    url: `${GITHUB_USER}/bot-promocoes`,
-  },
-  {
     name: 'cofrinhoUninter',
     icon: 'Java',
     description: {
@@ -499,17 +477,6 @@ export const repositories = [
     language: 'Python',
     stack: ['POO', 'Estudos'],
     url: `${GITHUB_USER}/restaurante-express`,
-  },
-  {
-    name: 'livraria',
-    icon: 'Python',
-    description: {
-      pt: 'Simulação de um sistema de livraria em Python, criada como avaliação na faculdade.',
-      en: 'A bookstore system simulation in Python, built as a university assignment.',
-    },
-    language: 'Python',
-    stack: ['POO', 'Acadêmico'],
-    url: `${GITHUB_USER}/livraria`,
   },
 ]
 

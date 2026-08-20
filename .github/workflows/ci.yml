@@ -1,0 +1,42 @@
+name: CI
+
+# Roda o lint e o build como check de validação.
+# - No push de qualquer branch de trabalho (exceto main e gh-pages): garante que
+#   o check exista no commit mesmo quando o PR é aberto automaticamente pelo bot
+#   (PRs criados com o GITHUB_TOKEN não disparam o evento pull_request).
+# - No pull_request para a main: cobre PRs abertos manualmente por uma pessoa.
+on:
+  push:
+    branches-ignore:
+      - main
+      - gh-pages
+  pull_request:
+    branches: [main]
+
+# Cancela execuções antigas do mesmo ref quando um novo push chega.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Lint e build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build

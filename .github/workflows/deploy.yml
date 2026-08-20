@@ -1,0 +1,43 @@
+name: Deploy
+
+# Roda quando algo entra na main (ou seja, depois que um PR aprovado é mesclado).
+# Faz o build e publica o conteúdo de dist/ na branch gh-pages, que é a origem do
+# GitHub Pages. Permite também disparo manual pela aba Actions.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Evita dois deploys rodando ao mesmo tempo; cancela o anterior se um novo começar.
+concurrency:
+  group: deploy-gh-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build e publish gh-pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Publicar em gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

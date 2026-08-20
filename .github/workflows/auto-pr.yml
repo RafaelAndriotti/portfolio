@@ -1,0 +1,37 @@
+name: Auto PR
+
+# Sempre que algo for enviado para qualquer branch de trabalho (exceto main e
+# gh-pages), abre automaticamente um pull request para a main. Se já existir um
+# PR aberto para essa branch, o passo apenas avisa e segue sem erro.
+on:
+  push:
+    branches-ignore:
+      - main
+      - gh-pages
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  open-pr:
+    name: Abrir PR para a main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Criar pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          if gh pr view "$BRANCH" --json number --jq '.number' >/dev/null 2>&1; then
+            echo "PR já existe para a branch $BRANCH — nada a fazer."
+            exit 0
+          fi
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Atualização: $BRANCH" \
+            --body "PR aberto automaticamente a partir da branch \`$BRANCH\`. Após aprovação e merge na main, o deploy roda sozinho."
