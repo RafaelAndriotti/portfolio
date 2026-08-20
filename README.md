@@ -27,6 +27,12 @@ Outros scripts:
 | `npm run build` | Build de produção em `dist/` |
 | `npm run preview` | Serve o build de produção localmente |
 | `npm run lint` | Roda o Oxlint |
+| Push em `main` | Dispara deploy automático no GitHub Pages |
+
+## Deploy
+
+O deploy no GitHub Pages é automático a cada push na branch `main`, via workflow
+`Deploy to GitHub Pages`.
 
 ## Estrutura
 
