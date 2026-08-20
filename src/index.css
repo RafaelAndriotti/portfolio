@@ -55,6 +55,10 @@
   --color-section-glow: #18181b;
   --color-section-ghost: #2a2a2e;
 
+  /* Véu sobre a imagem de fundo. Escuro e forte no tema noturno para o texto
+     branco ler; o alpha alto mantém a imagem visível mas sem competir. */
+  --bg-scrim: rgba(5, 5, 6, 0.82);
+
   --font-heading: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, Menlo, Consolas, monospace;
@@ -95,6 +99,10 @@
   --shadow-sm: 0 0 0 1px rgba(0, 0, 0, 0.09);
   --shadow-md: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 20px 50px rgba(0, 0, 0, 0.12);
+
+  /* Véu claro no tema dia: texto escuro precisa de fundo claro por cima da
+     imagem. */
+  --bg-scrim: rgba(252, 252, 253, 0.86);
 }
 
 *,
@@ -105,7 +113,18 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--color-bg);
+  /* Imagem de fundo do site inteiro: fixa (não rola com o conteúdo), cobrindo
+     a viewport, sobre a cor base para o caso de a imagem não carregar. O véu
+     (`--bg-scrim`) é a primeira camada e troca com o tema, dando legibilidade
+     sem esconder a imagem. */
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(var(--bg-scrim), var(--bg-scrim)),
+    url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: 15px;
