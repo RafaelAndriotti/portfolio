@@ -1,0 +1,28 @@
+.dot-pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: color-mix(in srgb, var(--color-text) 26%, transparent);
+  pointer-events: none;
+}
+
+/* Variante para as faixas escuras (hero, capa de projeto, contato), que não
+   trocam com o tema — ali o ponto tem de ser sempre claro. */
+.dot-pattern.on-ink {
+  fill: rgba(255, 255, 255, 0.16);
+}
+
+/* A malha some antes de chegar no texto, então serve de textura sem virar
+   ruído por baixo da leitura. */
+.dot-pattern.fade-center {
+  -webkit-mask-image: radial-gradient(560px circle at 50% 34%, #000 0%, transparent 76%);
+  mask-image: radial-gradient(560px circle at 50% 34%, #000 0%, transparent 76%);
+}
+
+@media (max-width: 700px) {
+  .dot-pattern.fade-center {
+    -webkit-mask-image: radial-gradient(340px circle at 50% 30%, #000 0%, transparent 78%);
+    mask-image: radial-gradient(340px circle at 50% 30%, #000 0%, transparent 78%);
+  }
+}

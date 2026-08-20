@@ -10,7 +10,7 @@ function Experience() {
       <div className="experience-inner section">
         <div className="experience-heading">
           <div>
-            <SectionLabel number="03">{experienceSection.label}</SectionLabel>
+            <SectionLabel number="04">{experienceSection.label}</SectionLabel>
             <h2 className="section-title">
               {t(experienceSection.titleStart)}
               <em>{t(experienceSection.titleAccent)}</em>

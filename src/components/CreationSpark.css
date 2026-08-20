@@ -1,0 +1,158 @@
+/* A faixa é escura nos dois temas, como o contato e a capa de currículo. A
+   brasa entre os dedos só lê como brasa sobre preto, então ela não pode
+   depender do tema. */
+.creation-spark {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 22px 26px 8px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-section), var(--color-section-glow));
+  box-shadow: var(--shadow-md);
+}
+
+/* Fio de luz na borda de cima: o mesmo verniz dos cards. */
+.creation-spark::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.22) 24%, rgba(255, 255, 255, 0.22) 76%, transparent);
+}
+
+/* A malha some no meio, onde ficam as mãos — ali ela viraria ruído. */
+.creation-spark .dot-pattern {
+  fill: rgba(255, 255, 255, 0.1);
+  -webkit-mask-image: radial-gradient(680px circle at 50% 60%, transparent 0%, #000 78%);
+  mask-image: radial-gradient(680px circle at 50% 60%, transparent 0%, #000 78%);
+}
+
+.spark-head {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px 24px;
+}
+.spark-kicker {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-300);
+}
+.spark-caption {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-accent-200);
+  opacity: 0.82;
+}
+
+.spark-canvas {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: -8px;
+}
+
+/* — cores da brasa nos stops dos gradientes —
+   `stop-color` só aceita var() como propriedade CSS; como atributo o var()
+   não é substituído, por isso os stops vêm daqui e não do JSX. */
+.stop-core { stop-color: var(--spark-core); }
+.stop-warm { stop-color: var(--spark-warm); }
+.stop-hot { stop-color: var(--spark-hot); }
+
+/* — detalhe das mãos — */
+.spark-crease {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.spark-circuit {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.spark-circuit circle {
+  fill: var(--spark-warm);
+  stroke: none;
+  opacity: 0.75;
+}
+.spark-burst line {
+  stroke: var(--spark-warm);
+  stroke-width: 3;
+  opacity: 0.9;
+}
+.spark-burst-ring {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.14);
+  stroke-width: 1.5;
+}
+.spark-burst-core { fill: var(--spark-core); }
+
+/* — o vão entre os indicadores —
+   `screen` deixa a brasa acender as pontas dos dedos por cima, em vez de
+   pintar um disco laranja opaco sobre elas. */
+.spark-glow {
+  mix-blend-mode: screen;
+  transform-box: view-box;
+  transform-origin: 585px 169px;
+  animation: spark-breathe 4.2s ease-in-out infinite;
+}
+.spark-core {
+  mix-blend-mode: screen;
+  transform-box: view-box;
+  transform-origin: 585px 169px;
+  animation: spark-breathe 4.2s ease-in-out infinite reverse;
+}
+.spark-point {
+  fill: #fff;
+  mix-blend-mode: screen;
+}
+.spark-arc {
+  fill: none;
+  stroke: var(--spark-warm);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 5 11;
+  opacity: 0.75;
+  mix-blend-mode: screen;
+  animation: spark-travel 2.6s linear infinite;
+}
+
+@keyframes spark-breathe {
+  0%, 100% { opacity: 0.62; transform: scale(0.94); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+@keyframes spark-travel {
+  to { stroke-dashoffset: -32; }
+}
+
+/* — legendas das duas mãos — */
+.spark-tag {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  fill: var(--color-accent-300);
+  opacity: 0.7;
+}
+
+@media (max-width: 700px) {
+  .creation-spark { padding: 18px 18px 6px; }
+  .spark-caption { font-size: 12px; }
+  .spark-tag { font-size: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spark-glow,
+  .spark-core,
+  .spark-arc { animation: none; }
+}

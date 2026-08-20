@@ -1,8 +1,8 @@
-import { contact, footer } from '../data/portfolio'
+import { contact, cursorName, footer } from '../data/portfolio'
 import { useSite } from '../theme'
 
 function Footer() {
-  const { t } = useSite()
+  const { t, openNamePrompt } = useSite()
 
   return (
     <footer className="footer rule-top">
@@ -11,6 +11,9 @@ function Footer() {
       </a>
       <p>{t(footer.note)}</p>
       <div>
+        <button type="button" className="cursor-name-change" onClick={openNamePrompt}>
+          {t(cursorName.change)}
+        </button>
         <a href={contact.github} target="_blank" rel="noreferrer">
           GitHub
         </a>

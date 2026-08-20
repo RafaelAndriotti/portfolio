@@ -1,5 +1,6 @@
+import CreationSpark from '../CreationSpark'
 import { ArrowIcon } from '../icons'
-import { footer, hero } from '../../data/portfolio'
+import { hero } from '../../data/portfolio'
 import { useSite } from '../../theme'
 import foto from '../../assets/foto-perfil.jpeg'
 
@@ -35,8 +36,11 @@ function Hero() {
         </div>
         <p className="visual-note">Node · TypeScript · SQL</p>
       </div>
+
+      <CreationSpark />
     </section>
   )
 }
 
 export default Hero
+

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import ArchGallery from '../ArchGallery'
 import { ArrowUpRightIcon, CloseIcon, GithubIcon } from '../icons'
 import SectionLabel from '../SectionLabel'
 import {
@@ -8,7 +9,50 @@ import {
   repositories,
   ui,
 } from '../../data/portfolio'
+import { techIcons } from '../../data/techIcons'
 import { useSite } from '../../theme'
+
+// Ordem do leque: os destaques ficam no meio, onde a carta fica de frente
+// e por cima. API-Livraria no centro exato.
+const GALLERY_ORDER = [
+  'meal-prep',
+  'cofrinhoUninter',
+  'VitalTrack',
+  'API Livraria',
+  'ToDoList API',
+  'restaurante-express',
+  'Quadro-Kanban',
+]
+
+function galleryItems() {
+  const byName = new Map()
+  featuredProjects.forEach((p) => byName.set(p.title, { name: p.title, icon: p.icon, url: p.url }))
+  repositories.forEach((r) => byName.set(r.name, { name: r.name, icon: r.icon, url: r.url }))
+
+  return GALLERY_ORDER.map((name) => byName.get(name))
+    .filter(Boolean)
+    .map((entry) => {
+      const mark = techIcons[entry.icon]
+      return {
+        key: entry.name,
+        label: entry.name,
+        href: entry.url,
+        render: () => (
+          <div
+            className="project-chip"
+            style={{ '--chip-brand': mark ? mark.hex : '#888888' }}
+          >
+            {mark ? (
+              <svg viewBox={mark.viewBox} aria-hidden="true">
+                <path d={mark.d} />
+              </svg>
+            ) : null}
+            <span>{entry.name}</span>
+          </div>
+        ),
+      }
+    })
+}
 
 function EndpointMockup({ endpoint }) {
   return (
@@ -99,12 +143,14 @@ function Projects() {
 
   return (
     <section className="projects section" id="projetos">
-      <SectionLabel number="04">{projectsSection.label}</SectionLabel>
+      <SectionLabel number="05">{projectsSection.label}</SectionLabel>
       <h2 className="section-title">
         {t(projectsSection.titleStart)}
         <em>{t(projectsSection.titleAccent)}</em>
       </h2>
       <p className="projects-hint">{t(projectsSection.hint)}</p>
+
+      <ArchGallery items={galleryItems()} label={t(projectsSection.galleryLabel)} />
 
       <div className="project-list">
         {featuredProjects.map((project) => (

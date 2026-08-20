@@ -1,38 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&display=swap');
 
 :root {
-  --color-bg: #161826;
-  --color-surface: #232532;
-  --color-text: #e9e9ed;
-  --color-accent: #5b94dd;
-  --color-divider: color-mix(in srgb, #e9e9ed 16%, transparent);
+  /* Black piano: preto fundo, quase sem matiz, com as superfícies subindo em
+     degraus curtos. O brilho não vem de cor, vem de verniz — os gradientes de
+     `--gloss-*` e a linha de luz de `--sheen`. */
+  --color-bg: #050506;
+  --color-surface: #0f0f11;
+  --color-surface-2: #17171a;
+  --color-text: #ededee;
+  --color-accent: #ffffff;
+  --color-divider: color-mix(in srgb, #ededee 14%, transparent);
 
-  --color-neutral-100: #f3f5fe;
-  --color-neutral-200: #e4e7f5;
-  --color-neutral-300: #cfd3e5;
-  --color-neutral-400: #b2b6ca;
-  --color-neutral-500: #9397ab;
-  --color-neutral-600: #75798c;
-  --color-neutral-700: #595d6c;
-  --color-neutral-800: #3f424d;
-  --color-neutral-900: #292b31;
+  /* Verniz. Uma faixa clara no topo da superfície e um reflexo largo por baixo:
+     é o que separa "preto chapado" de "preto polido". */
+  --gloss-top: rgba(255, 255, 255, 0.07);
+  --gloss-bottom: rgba(255, 255, 255, 0);
+  --sheen: rgba(255, 255, 255, 0.16);
+  --glow: rgba(255, 255, 255, 0.55);
 
-  --color-accent-100: #f4f6ff;
-  --color-accent-200: #e3ebfe;
-  --color-accent-300: #c9dbfd;
-  --color-accent-400: #a3c2fb;
-  --color-accent-500: #7a9fe0;
-  --color-accent-600: #5c80bf;
-  --color-accent-700: #445e94;
-  --color-accent-800: #31446a;
-  --color-accent-900: #202b41;
+  /* Superfícies que são escuras nos dois temas (hero, capa de projeto,
+     currículo, contato). Por isso ficam fora do bloco de tema. */
+  --color-ink: #050506;
 
-  --color-section: #1c3060;
-  --color-section-glow: #234080;
-  --color-section-ghost: #3a5a97;
+  /* Brasa. É a única cor do site, e vive só no vão entre os dedos da montagem
+     da Criação de Adão — o preto piano continua intacto em todo o resto. */
+  --spark-core: #fff3e6;
+  --spark-warm: #ffb083;
+  --spark-hot: #ff7a3c;
 
-  --font-heading: "Caudex", Georgia, serif;
-  --font-body: "Caudex", Georgia, serif;
+  --color-neutral-100: #f7f7f7;
+  --color-neutral-200: #ebebeb;
+  --color-neutral-300: #d6d6d6;
+  --color-neutral-400: #b8b8b8;
+  --color-neutral-500: #949494;
+  --color-neutral-600: #6f6f6f;
+  --color-neutral-700: #4f4f4f;
+  --color-neutral-800: #333333;
+  --color-neutral-900: #1c1c1c;
+
+  /* Rampa clara→escura, igual nos dois temas: 100–300 são texto sobre as
+     faixas escuras, 700–900 são fundo de botão e de barra. */
+  --color-accent-100: #fafafa;
+  --color-accent-200: #ededed;
+  --color-accent-300: #d2d2d2;
+  --color-accent-400: #b0b0b0;
+  --color-accent-500: #8a8a8a;
+  --color-accent-600: #666666;
+  --color-accent-700: #454545;
+  --color-accent-800: #2b2b2b;
+  --color-accent-900: #171717;
+
+  --color-section: #0a0a0b;
+  --color-section-glow: #18181b;
+  --color-section-ghost: #2a2a2e;
+
+  --font-heading: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, Menlo, Consolas, monospace;
 
   --space-1: 2.8px;
@@ -46,20 +69,29 @@
   --radius-md: 8px;
   --radius-lg: 14px;
 
-  --shadow-sm: 0 0 0 1px #3f424d;
-  --shadow-md: 0 0 0 1px #595d6c, 0 6px 18px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 0 0 1px #9397ab, 0 16px 40px rgba(0, 0, 0, 0.65);
+  /* Sombra dura mais escura que a superfície, para o card descolar do fundo
+     preto em vez de sumir nele. */
+  --shadow-sm: 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-md: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.8);
+  --shadow-lg: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 20px 50px rgba(0, 0, 0, 0.9);
 }
 
 [data-theme='light'] {
-  --color-bg: #e4e7f5;
-  --color-surface: #f3f5fe;
-  --color-text: #292b31;
-  --color-accent: #445e94;
-  --color-divider: color-mix(in srgb, #292b31 18%, transparent);
-  --shadow-sm: 0 0 0 1px #cfd3e5;
-  --shadow-md: 0 0 0 1px #cfd3e5, 0 6px 18px rgba(41, 43, 49, 0.1);
-  --shadow-lg: 0 0 0 1px #b2b6ca, 0 16px 40px rgba(41, 43, 49, 0.16);
+  --color-bg: #fcfcfd;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f4f6;
+  --color-text: #1a1a1c;
+  --color-accent: #050506;
+  --color-divider: color-mix(in srgb, #1a1a1c 14%, transparent);
+
+  --gloss-top: rgba(255, 255, 255, 0.9);
+  --gloss-bottom: rgba(0, 0, 0, 0.03);
+  --sheen: rgba(0, 0, 0, 0.08);
+  --glow: rgba(0, 0, 0, 0.32);
+
+  --shadow-sm: 0 0 0 1px rgba(0, 0, 0, 0.09);
+  --shadow-md: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
 *,
@@ -93,4 +125,4 @@ a { color: var(--color-accent); text-underline-offset: 3px; }
 :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 ::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
 
-.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+.text-muted { color: color-mix(in srgb, var(--color-text) 70%, transparent); }

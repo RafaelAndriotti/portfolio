@@ -8,7 +8,7 @@ function Resume() {
 
   return (
     <section className="resume section" id="curriculo">
-      <SectionLabel number="05">{resume.label}</SectionLabel>
+      <SectionLabel number="06">{resume.label}</SectionLabel>
 
       <div className="resume-card card">
         <div className="resume-copy">

@@ -5,9 +5,11 @@ import Hero from './components/sections/Hero'
 import Projects from './components/sections/Projects'
 import Resume from './components/sections/Resume'
 import Skills from './components/sections/Skills'
+import CursorNamePrompt from './components/CursorNamePrompt'
+import CustomCursor from './components/CustomCursor'
 import Footer from './components/Footer'
 import Header from './components/Header'
-import SkillsStrip from './components/SkillsStrip'
+import TechCarousel from './components/TechCarousel'
 import { useSite } from './theme'
 import { ui } from './data/portfolio'
 import './App.css'
@@ -17,6 +19,8 @@ function App() {
 
   return (
     <div className="site-shell">
+      <CustomCursor />
+      <CursorNamePrompt />
       <a className="skip-link" href="#conteudo-principal">
         {t(ui.skip)}
       </a>
@@ -24,9 +28,9 @@ function App() {
 
       <main id="conteudo-principal">
         <Hero />
-        <SkillsStrip />
         <About />
         <Skills />
+        <TechCarousel />
         <Experience />
         <Projects />
         <Resume />
