@@ -1,6 +1,8 @@
 /* Portfólio — Nocturne (azul + Montserrat). Uma paleta só, tudo a partir dos tokens do index.css. */
 
-.site-shell { min-height: 100vh; overflow-x: hidden; }
+/* O conteúdo sobe uma camada para ficar na frente do véu de aurora, que é
+   `fixed` no nível de baixo. */
+.site-shell { position: relative; z-index: 1; min-height: 100vh; overflow-x: hidden; }
 
 .skip-link { position: absolute; left: -9999px; top: 8px; }
 .skip-link:focus-visible {
@@ -137,9 +139,6 @@
 }
 @keyframes hero-float { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
 .visual-note { margin: 0; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
-
-/* A montagem ocupa a largura inteira do hero, embaixo das duas colunas. */
-.creation-spark { grid-column: 1 / -1; margin-top: 16px; }
 
 @media (prefers-reduced-motion: reduce) { .portrait-art img { animation: none; } }
 

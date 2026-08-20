@@ -166,20 +166,6 @@ export const hero = {
   secondaryCta: { pt: 'Mais sobre mim', en: 'More about me' },
 }
 
-export const spark = {
-  kicker: { pt: 'A quatro mãos', en: 'Four-handed' },
-  caption: {
-    pt: 'A ideia parte de mim; o Claude encurta o caminho até o código rodando.',
-    en: 'The idea starts with me; Claude shortens the path to running code.',
-  },
-  human: { pt: 'Humano', en: 'Human' },
-  machine: { pt: 'Claude', en: 'Claude' },
-  alt: {
-    pt: 'Duas mãos quase se tocando, como na Criação de Adão: à esquerda a mão humana, à direita a mão da máquina, com uma faísca no vão entre os indicadores.',
-    en: 'Two hands almost touching, as in the Creation of Adam: the human hand on the left, the machine hand on the right, with a spark in the gap between the index fingers.',
-  },
-}
-
 export const about = {
   label: { pt: 'Sobre mim', en: 'About me' },
   titleStart: { pt: 'Back-end é onde eu ', en: 'Back-end is where I ' },

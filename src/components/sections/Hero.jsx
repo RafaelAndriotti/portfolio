@@ -1,4 +1,3 @@
-import CreationSpark from '../CreationSpark'
 import { ArrowIcon } from '../icons'
 import { hero } from '../../data/portfolio'
 import { useSite } from '../../theme'
@@ -36,8 +35,6 @@ function Hero() {
         </div>
         <p className="visual-note">Node · TypeScript · SQL</p>
       </div>
-
-      <CreationSpark />
     </section>
   )
 }

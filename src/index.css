@@ -22,11 +22,12 @@
      currículo, contato). Por isso ficam fora do bloco de tema. */
   --color-ink: #050506;
 
-  /* Brasa. É a única cor do site, e vive só no vão entre os dedos da montagem
-     da Criação de Adão — o preto piano continua intacto em todo o resto. */
-  --spark-core: #fff3e6;
-  --spark-warm: #ffb083;
-  --spark-hot: #ff7a3c;
+  /* Aurora. A única cor do site, e ela mora atrás de tudo, num véu fixo com
+     opacidade baixa — o preto piano continua sendo o que se lê. */
+  --aurora-1: #6d5efc;
+  --aurora-2: #8b5cf6;
+  --aurora-3: #3fd6c8;
+  --aurora-veil: 0.46;
 
   --color-neutral-100: #f7f7f7;
   --color-neutral-200: #ebebeb;
@@ -88,6 +89,8 @@
   --gloss-bottom: rgba(0, 0, 0, 0.03);
   --sheen: rgba(0, 0, 0, 0.08);
   --glow: rgba(0, 0, 0, 0.32);
+
+  --aurora-veil: 0.24;
 
   --shadow-sm: 0 0 0 1px rgba(0, 0, 0, 0.09);
   --shadow-md: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.08);
