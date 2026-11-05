@@ -312,7 +312,6 @@ export const projectsSection = {
   otherRepos: { pt: 'Outros repositórios', en: 'Other repositories' },
   fullProfile: { pt: 'Ver perfil completo', en: 'See the full profile' },
   projectWord: { pt: 'Projeto', en: 'Project' },
-  galleryLabel: { pt: 'Projetos em destaque', en: 'Featured projects' },
 }
 
 export const featuredProjects = [
@@ -543,17 +542,4 @@ export const ui = {
   next: { pt: 'Próximo', en: 'Next' },
   theme: { pt: 'Alternar tema', en: 'Toggle theme' },
   menu: { pt: 'Menu', en: 'Menu' },
-}
-
-export const cursorName = {
-  guest: { pt: 'Visitante', en: 'Guest' },
-  question: { pt: 'Como posso te chamar?', en: 'What should I call you?' },
-  hint: {
-    pt: 'Seu nome fica só neste navegador, e aparece no cursor.',
-    en: 'Your name stays in this browser only, and shows up on the cursor.',
-  },
-  placeholder: { pt: 'Seu primeiro nome', en: 'Your first name' },
-  confirm: { pt: 'Pronto', en: 'Done' },
-  dismiss: { pt: 'Agora não', en: 'Not now' },
-  change: { pt: 'Trocar o nome do cursor', en: 'Change the cursor name' },
 }

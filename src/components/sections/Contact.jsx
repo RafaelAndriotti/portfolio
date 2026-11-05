@@ -9,10 +9,7 @@ function Contact() {
     <section className="contact section" id="contato">
       <div className="contact-card">
         <div className="contact-inner">
-          <p className="eyebrow">
-            <span />
-            {t(contact.eyebrow)}
-          </p>
+          <p className="eyebrow">{t(contact.eyebrow)}</p>
           <h2>{t(contact.title)}</h2>
           <p>{t(contact.description)}</p>
 
