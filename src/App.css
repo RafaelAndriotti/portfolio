@@ -2,7 +2,12 @@
    A estrutura é editorial: linhas finas separam, o espaço agrupa, e nenhum
    conteúdo mora dentro de card. */
 
-.site-shell { position: relative; z-index: 1; min-height: 100vh; overflow-x: hidden; }
+/* `clip` corta o vazamento lateral sem virar container de rolagem — com
+   `hidden` o header sticky perdia a referência e rolava junto. */
+.site-shell { position: relative; z-index: 1; min-height: 100vh; overflow-x: clip; }
+
+/* Âncoras do menu param abaixo do header fixo. */
+main section[id] { scroll-margin-top: 72px; }
 
 .skip-link { position: absolute; left: -9999px; top: 8px; }
 .skip-link:focus-visible {
