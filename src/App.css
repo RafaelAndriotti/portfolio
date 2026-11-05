@@ -185,7 +185,7 @@
 .experience-content p { margin: 0 0 14px; font-size: 14px; line-height: 1.65; opacity: 0.78; max-width: 64ch; }
 
 /* — projetos — */
-.projects > p.projects-hint, .section-hint { margin: 0 0 36px; font-size: 14px; max-width: 52ch; color: color-mix(in srgb, var(--color-text) 70%, transparent); }
+.projects > p.projects-hint { margin: 0 0 36px; font-size: 14px; max-width: 52ch; color: color-mix(in srgb, var(--color-text) 70%, transparent); }
 .project-list { display: flex; flex-direction: column; gap: 20px; }
 .project-card {
   display: grid; grid-template-columns: 0.85fr 1.15fr; overflow: hidden;

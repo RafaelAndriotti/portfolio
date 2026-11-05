@@ -15,10 +15,7 @@ const WITH = { pt: 'Junto com', en: 'Alongside' }
 export const techSection = {
   label: { pt: 'Stack', en: 'Stack' },
   title: { pt: 'As ferramentas, e onde eu uso cada uma.', en: 'The tools, and where I use each one.' },
-  hint: {
-    pt: 'Arraste para girar, ou use as setas do teclado.',
-    en: 'Drag to spin, or use the arrow keys.',
-  },
+  toolColumn: { pt: 'Ferramenta', en: 'Tool' },
 }
 
 export const techStack = [

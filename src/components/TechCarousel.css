@@ -1,0 +1,130 @@
+/* Stack como tabela com linhas. No desktop as colunas vêm do cabeçalho e os
+   <dt> somem visualmente; no celular cada linha empilha e o <dt> volta como
+   rótulo. */
+.stack-table {
+  margin-top: 40px;
+  --stack-cols: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1.5fr) minmax(0, 1fr);
+}
+
+.stack-head,
+.stack-row {
+  display: grid;
+  grid-template-columns: var(--stack-cols);
+  gap: var(--space-8);
+}
+
+.stack-head {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+
+.stack-rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stack-row {
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.stack-tool {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.stack-tool svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  opacity: 0.8;
+}
+
+.stack-tool h3 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.stack-tool p {
+  margin: 2px 0 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+
+/* `display: contents` deixa os <dd> caírem direto nas colunas da linha. */
+.stack-row dl,
+.stack-row dl > div {
+  display: contents;
+}
+
+.stack-row dt {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.stack-row dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .stack-head {
+    display: none;
+  }
+
+  .stack-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 20px 0;
+    border-bottom-color: var(--color-divider);
+  }
+
+  .stack-rows {
+    border-top: 1px solid var(--color-text);
+  }
+
+  .stack-row dl {
+    display: grid;
+    gap: 6px;
+    margin: 0 0 0 30px;
+  }
+
+  .stack-row dl > div {
+    display: grid;
+    grid-template-columns: 9ch minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .stack-row dt {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+    white-space: normal;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-text) 70%, transparent);
+  }
+}
