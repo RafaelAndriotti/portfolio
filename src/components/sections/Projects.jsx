@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRightIcon, CloseIcon, GithubIcon } from '../icons'
 import SectionLabel from '../SectionLabel'
 import {
@@ -38,12 +38,25 @@ function EndpointMockup({ endpoint }) {
 function CaseStudyDialog({ project, onClose }) {
   const { t } = useSite()
 
+  const closeRef = useRef(null)
+
+  // Foco entra no modal ao abrir e volta para o botão que o abriu ao fechar;
+  // a página por baixo não rola enquanto ele está aberto.
   useEffect(() => {
+    const opener = document.activeElement
+    const { overflow } = document.body.style
+    document.body.style.overflow = 'hidden'
+    closeRef.current?.focus()
+
     const onKey = (event) => {
       if (event.key === 'Escape') onClose()
     }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.body.style.overflow = overflow
+      if (opener instanceof HTMLElement) opener.focus()
+    }
   }, [onClose])
 
   return (
@@ -64,6 +77,7 @@ function CaseStudyDialog({ project, onClose }) {
             className="button button-icon"
             type="button"
             onClick={onClose}
+            ref={closeRef}
             aria-label={t(ui.close)}
           >
             <CloseIcon />
@@ -71,15 +85,15 @@ function CaseStudyDialog({ project, onClose }) {
         </div>
 
         <div>
-          <h5>{t(projectsSection.problem)}</h5>
+          <h4>{t(projectsSection.problem)}</h4>
           <p className="dialog-body">{t(project.caseStudy.problem)}</p>
         </div>
         <div>
-          <h5>{t(projectsSection.built)}</h5>
+          <h4>{t(projectsSection.built)}</h4>
           <p className="dialog-body">{t(project.caseStudy.built)}</p>
         </div>
         <div>
-          <h5>{t(projectsSection.learned)}</h5>
+          <h4>{t(projectsSection.learned)}</h4>
           <p className="dialog-body">{t(project.caseStudy.learned)}</p>
         </div>
 

@@ -82,7 +82,18 @@
 *::before,
 *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* Barra de rolagem, caret e controles nativos seguem a paleta. */
+  scrollbar-color: color-mix(in srgb, var(--color-text) 28%, transparent) var(--color-bg);
+  accent-color: var(--color-accent);
+  caret-color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
 
 body {
   margin: 0;

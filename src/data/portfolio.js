@@ -525,8 +525,6 @@ export const ui = {
   headerCta: { pt: 'Contato', en: 'Contact' },
   contactNav: { pt: 'Contato', en: 'Contact' },
   close: { pt: 'Fechar', en: 'Close' },
-  previous: { pt: 'Anterior', en: 'Previous' },
-  next: { pt: 'Próximo', en: 'Next' },
   theme: { pt: 'Alternar tema', en: 'Toggle theme' },
   menu: { pt: 'Menu', en: 'Menu' },
 }

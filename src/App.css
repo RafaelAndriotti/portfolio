@@ -141,7 +141,7 @@
 .experience-item { display: grid; grid-template-columns: 200px 1fr; gap: 40px; padding: 28px 0; }
 .experience-item > * { min-width: 0; }
 .experience-meta strong { display: block; font-family: var(--font-mono); font-weight: 500; font-size: var(--text-label); }
-.experience-meta span { font-size: var(--text-meta); color: color-mix(in srgb, var(--color-text) 70%, transparent); }
+.experience-meta span { font-size: var(--text-meta); font-variant-numeric: tabular-nums; color: color-mix(in srgb, var(--color-text) 70%, transparent); }
 .experience-content h3 { font-size: var(--text-h3); margin: 0 0 8px; }
 .experience-content p { margin: 0 0 14px; font-size: var(--text-body); line-height: 1.65; max-width: 64ch; }
 
@@ -219,7 +219,7 @@
 .dialog-head { display: flex; align-items: flex-start; gap: 16px; }
 .dialog-kicker { margin: 0; font-family: var(--font-mono); font-size: var(--text-label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); }
 .dialog-title { margin: 6px 0 0; font-family: var(--font-heading); font-size: var(--text-h3); }
-.dialog h5 { margin: 0 0 6px; font-size: var(--text-body); }
+.dialog h4 { margin: 0 0 6px; font-size: var(--text-body); }
 .dialog-body { margin: 0; font-size: var(--text-body); line-height: 1.6; }
 .dialog-actions { display: flex; justify-content: flex-end; }
 
