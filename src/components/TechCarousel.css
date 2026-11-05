@@ -17,7 +17,7 @@
   padding-bottom: 12px;
   border-bottom: 1px solid var(--color-text);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--color-text) 70%, transparent);
@@ -52,14 +52,14 @@
 
 .stack-tool h3 {
   margin: 0;
-  font-size: 17px;
+  font-size: var(--text-h4);
   line-height: 1.25;
 }
 
 .stack-tool p {
   margin: 2px 0 0;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-label);
   letter-spacing: 0.04em;
   color: color-mix(in srgb, var(--color-text) 70%, transparent);
 }
@@ -81,7 +81,7 @@
 
 .stack-row dd {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--text-meta);
   line-height: 1.5;
 }
 
@@ -121,7 +121,7 @@
     clip-path: none;
     white-space: normal;
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: var(--text-label);
     line-height: 1.9;
     letter-spacing: 0.04em;
     text-transform: uppercase;
