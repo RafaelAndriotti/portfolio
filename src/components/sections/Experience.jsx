@@ -11,7 +11,7 @@ function Experience() {
         <SectionLabel>{experienceSection.label}</SectionLabel>
         <div className="experience-heading">
           <h2 className="section-title">
-            {t(experienceSection.titleStart)}{t(experienceSection.titleAccent)}
+            {t(experienceSection.title)}
           </h2>
           <p>{t(experienceSection.intro)}</p>
         </div>

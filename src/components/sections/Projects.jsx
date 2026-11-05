@@ -101,7 +101,7 @@ function Projects() {
     <section className="projects section" id="projetos">
       <SectionLabel>{projectsSection.label}</SectionLabel>
       <h2 className="section-title">
-        {t(projectsSection.titleStart)}{t(projectsSection.titleAccent)}
+        {t(projectsSection.title)}
       </h2>
       <p className="projects-hint">{t(projectsSection.hint)}</p>
 

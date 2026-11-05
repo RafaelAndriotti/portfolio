@@ -9,9 +9,8 @@ function Hero() {
   return (
     <section className="hero section" id="inicio">
       <div className="hero-copy">
-        <p className="eyebrow">{t(hero.eyebrow)}</p>
         <h1>
-          {t(hero.titleStart)}{t(hero.titleAccent)}
+          {t(hero.title)}
         </h1>
         <p className="hero-description">{t(hero.description)}</p>
         <div className="hero-actions">

@@ -10,7 +10,7 @@ function Skills() {
       <SectionLabel>{skills.label}</SectionLabel>
       <div className="skills-heading">
         <h2 className="section-title">
-          {t(skills.titleStart)}{t(skills.titleAccent)}
+          {t(skills.title)}
         </h2>
         <p>{t(skills.intro)}</p>
       </div>

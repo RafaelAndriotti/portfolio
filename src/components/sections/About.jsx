@@ -12,7 +12,7 @@ function About() {
 
       <div className="about-content">
         <h2 className="section-title">
-          {t(about.titleStart)}{t(about.titleAccent)}
+          {t(about.title)}
         </h2>
         <div className="about-text">
           {about.paragraphs.map((paragraph) => (
@@ -24,14 +24,7 @@ function About() {
         </div>
       </div>
 
-      <dl className="stats rule-top">
-        {about.stats.map((stat) => (
-          <div key={stat.value}>
-            <dd>{stat.value}</dd>
-            <dt>{t(stat.label)}</dt>
-          </div>
-        ))}
-      </dl>
+      <p className="about-proof rule-top">{t(about.proof)}</p>
     </section>
   )
 }

@@ -12,7 +12,6 @@ function Resume() {
 
       <div className="resume-body">
         <div className="resume-copy">
-          <p className="resume-kicker">{t(resume.kicker)}</p>
           <h2>{t(resume.title)}</h2>
           <p>{t(resume.description)}</p>
           <ul className="resume-highlights">

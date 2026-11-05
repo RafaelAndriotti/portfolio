@@ -1,5 +1,6 @@
 import { ArrowIcon, GithubIcon, LinkedinIcon } from '../icons'
-import { contact } from '../../data/portfolio'
+import SectionLabel from '../SectionLabel'
+import { contact, ui } from '../../data/portfolio'
 import { useSite } from '../../theme'
 
 function Contact() {
@@ -7,9 +8,9 @@ function Contact() {
 
   return (
     <section className="contact section" id="contato">
+      <SectionLabel>{ui.contactNav}</SectionLabel>
       <div className="contact-card">
         <div className="contact-inner">
-          <p className="eyebrow">{t(contact.eyebrow)}</p>
           <h2>{t(contact.title)}</h2>
           <p>{t(contact.description)}</p>
 
