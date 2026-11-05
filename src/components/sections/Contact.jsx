@@ -14,7 +14,7 @@ function Contact() {
           <p>{t(contact.description)}</p>
 
           <div className="contact-actions">
-            <a className="button button-light" href={`mailto:${contact.email}`}>
+            <a className="button button-primary" href={`mailto:${contact.email}`}>
               {t(contact.cta)} <ArrowIcon />
             </a>
 

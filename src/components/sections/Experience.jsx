@@ -8,21 +8,17 @@ function Experience() {
   return (
     <section className="experience" id="experiencia">
       <div className="experience-inner section">
+        <SectionLabel>{experienceSection.label}</SectionLabel>
         <div className="experience-heading">
-          <div>
-            <SectionLabel number="04">{experienceSection.label}</SectionLabel>
-            <h2 className="section-title">
-              {t(experienceSection.titleStart)}
-              <em>{t(experienceSection.titleAccent)}</em>
-            </h2>
-          </div>
+          <h2 className="section-title">
+            {t(experienceSection.titleStart)}{t(experienceSection.titleAccent)}
+          </h2>
           <p>{t(experienceSection.intro)}</p>
         </div>
 
         <div className="experience-list">
           {experiences.map((experience) => (
             <article className="experience-item rule-top" key={experience.number}>
-              <span className="experience-number">{experience.number}</span>
               <div className="experience-meta">
                 <strong>{t(experience.category)}</strong>
                 <span>{t(experience.period)}</span>

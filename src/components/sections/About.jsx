@@ -8,12 +8,11 @@ function About() {
 
   return (
     <section className="about section" id="sobre">
-      <SectionLabel number="01">{about.label}</SectionLabel>
+      <SectionLabel>{about.label}</SectionLabel>
 
       <div className="about-content">
         <h2 className="section-title">
-          {t(about.titleStart)}
-          <em>{t(about.titleAccent)}</em>
+          {t(about.titleStart)}{t(about.titleAccent)}
         </h2>
         <div className="about-text">
           {about.paragraphs.map((paragraph) => (

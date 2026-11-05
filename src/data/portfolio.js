@@ -297,8 +297,8 @@ export const projectsSection = {
   titleStart: { pt: 'Serviços que eu construí ', en: 'Services I built ' },
   titleAccent: { pt: 'de ponta a ponta.', en: 'end to end.' },
   hint: {
-    pt: 'Passe o mouse para ver as ações. Abra o estudo de caso para o raciocínio por trás.',
-    en: 'Hover to reveal the actions. Open the case study for the reasoning behind it.',
+    pt: 'Abra o estudo de caso para o raciocínio por trás de cada um.',
+    en: 'Open the case study for the reasoning behind each one.',
   },
   caseStudy: { pt: 'Estudo de caso', en: 'Case study' },
   viewCode: { pt: 'Ver no GitHub', en: 'View on GitHub' },
@@ -308,7 +308,6 @@ export const projectsSection = {
   learned: { pt: 'O que aprendi', en: 'What I learned' },
   otherRepos: { pt: 'Outros repositórios', en: 'Other repositories' },
   fullProfile: { pt: 'Ver perfil completo', en: 'See the full profile' },
-  projectWord: { pt: 'Projeto', en: 'Project' },
 }
 
 export const featuredProjects = [

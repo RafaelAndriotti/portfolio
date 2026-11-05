@@ -1,14 +1,10 @@
 import { useSite } from '../theme'
 
-function SectionLabel({ number, children }) {
+// Cabeçalho corrido da seção: uma linha cheia e o nome em mono. Sem número —
+// a ordem das seções não carrega informação para quem lê.
+function SectionLabel({ children }) {
   const { t } = useSite()
-  return (
-    <div className="section-label">
-      <span>{number}</span>
-      <i />
-      <p>{t(children)}</p>
-    </div>
-  )
+  return <p className="section-label">{t(children)}</p>
 }
 
 export default SectionLabel

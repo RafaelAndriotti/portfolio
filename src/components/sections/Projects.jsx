@@ -99,27 +99,20 @@ function Projects() {
 
   return (
     <section className="projects section" id="projetos">
-      <SectionLabel number="05">{projectsSection.label}</SectionLabel>
+      <SectionLabel>{projectsSection.label}</SectionLabel>
       <h2 className="section-title">
-        {t(projectsSection.titleStart)}
-        <em>{t(projectsSection.titleAccent)}</em>
+        {t(projectsSection.titleStart)}{t(projectsSection.titleAccent)}
       </h2>
       <p className="projects-hint">{t(projectsSection.hint)}</p>
 
       <div className="project-list">
         {featuredProjects.map((project) => (
-          <article className="project-card card" key={project.number}>
+          <article className="project-row" key={project.number}>
             <div className="project-cover">
-              <span>{project.number}</span>
               <EndpointMockup endpoint={project.endpoint} />
             </div>
             <div className="project-info">
-              <div>
-                <p>
-                  {t(projectsSection.projectWord)} {project.number}
-                </p>
-                <h3>{project.title}</h3>
-              </div>
+              <h3>{project.title}</h3>
               <p>{t(project.description)}</p>
               <ul className="tag-list">
                 {project.tags.map((tag) => (
@@ -151,9 +144,9 @@ function Projects() {
           </a>
         </div>
 
-        <ul className="repo-grid">
+        <ul className="repo-list">
           {repositories.map((repo) => (
-            <li className="repo-card card" key={repo.name}>
+            <li className="repo-row" key={repo.name}>
               <h4>
                 <a href={repo.url} target="_blank" rel="noreferrer">
                   {repo.name}
@@ -162,7 +155,6 @@ function Projects() {
               <p>{t(repo.description)}</p>
               <div className="repo-footer">
                 <span className="repo-language">
-                  <i aria-hidden="true" />
                   {repo.language}
                 </span>
                 <ul className="tag-list" aria-label={repo.name}>

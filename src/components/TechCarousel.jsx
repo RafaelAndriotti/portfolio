@@ -13,7 +13,7 @@ function TechCarousel() {
 
   return (
     <section className="tech section" id="stack">
-      <SectionLabel number="03">{techSection.label}</SectionLabel>
+      <SectionLabel>{techSection.label}</SectionLabel>
       <h2 className="section-title">{t(techSection.title)}</h2>
 
       <div className="stack-table">

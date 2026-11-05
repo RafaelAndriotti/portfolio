@@ -11,8 +11,7 @@ function Hero() {
       <div className="hero-copy">
         <p className="eyebrow">{t(hero.eyebrow)}</p>
         <h1>
-          {t(hero.titleStart)}
-          <em>{t(hero.titleAccent)}</em>
+          {t(hero.titleStart)}{t(hero.titleAccent)}
         </h1>
         <p className="hero-description">{t(hero.description)}</p>
         <div className="hero-actions">
