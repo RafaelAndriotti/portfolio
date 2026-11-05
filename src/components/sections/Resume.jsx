@@ -8,11 +8,10 @@ function Resume() {
 
   return (
     <section className="resume section" id="curriculo">
-      <SectionLabel number="06">{resume.label}</SectionLabel>
+      <SectionLabel>{resume.label}</SectionLabel>
 
-      <div className="resume-card card">
+      <div className="resume-body">
         <div className="resume-copy">
-          <p className="resume-kicker">{t(resume.kicker)}</p>
           <h2>{t(resume.title)}</h2>
           <p>{t(resume.description)}</p>
           <ul className="resume-highlights">

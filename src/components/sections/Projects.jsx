@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import ArchGallery from '../ArchGallery'
+import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRightIcon, CloseIcon, GithubIcon } from '../icons'
 import SectionLabel from '../SectionLabel'
 import {
@@ -9,50 +8,7 @@ import {
   repositories,
   ui,
 } from '../../data/portfolio'
-import { techIcons } from '../../data/techIcons'
 import { useSite } from '../../theme'
-
-// Ordem do leque: os destaques ficam no meio, onde a carta fica de frente
-// e por cima. API-Livraria no centro exato.
-const GALLERY_ORDER = [
-  'meal-prep',
-  'cofrinhoUninter',
-  'VitalTrack',
-  'API Livraria',
-  'ToDoList API',
-  'restaurante-express',
-  'Quadro-Kanban',
-]
-
-function galleryItems() {
-  const byName = new Map()
-  featuredProjects.forEach((p) => byName.set(p.title, { name: p.title, icon: p.icon, url: p.url }))
-  repositories.forEach((r) => byName.set(r.name, { name: r.name, icon: r.icon, url: r.url }))
-
-  return GALLERY_ORDER.map((name) => byName.get(name))
-    .filter(Boolean)
-    .map((entry) => {
-      const mark = techIcons[entry.icon]
-      return {
-        key: entry.name,
-        label: entry.name,
-        href: entry.url,
-        render: () => (
-          <div
-            className="project-chip"
-            style={{ '--chip-brand': mark ? mark.hex : '#888888' }}
-          >
-            {mark ? (
-              <svg viewBox={mark.viewBox} aria-hidden="true">
-                <path d={mark.d} />
-              </svg>
-            ) : null}
-            <span>{entry.name}</span>
-          </div>
-        ),
-      }
-    })
-}
 
 function EndpointMockup({ endpoint }) {
   return (
@@ -82,12 +38,25 @@ function EndpointMockup({ endpoint }) {
 function CaseStudyDialog({ project, onClose }) {
   const { t } = useSite()
 
+  const closeRef = useRef(null)
+
+  // Foco entra no modal ao abrir e volta para o botão que o abriu ao fechar;
+  // a página por baixo não rola enquanto ele está aberto.
   useEffect(() => {
+    const opener = document.activeElement
+    const { overflow } = document.body.style
+    document.body.style.overflow = 'hidden'
+    closeRef.current?.focus()
+
     const onKey = (event) => {
       if (event.key === 'Escape') onClose()
     }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.body.style.overflow = overflow
+      if (opener instanceof HTMLElement) opener.focus()
+    }
   }, [onClose])
 
   return (
@@ -108,6 +77,7 @@ function CaseStudyDialog({ project, onClose }) {
             className="button button-icon"
             type="button"
             onClick={onClose}
+            ref={closeRef}
             aria-label={t(ui.close)}
           >
             <CloseIcon />
@@ -115,15 +85,15 @@ function CaseStudyDialog({ project, onClose }) {
         </div>
 
         <div>
-          <h5>{t(projectsSection.problem)}</h5>
+          <h4>{t(projectsSection.problem)}</h4>
           <p className="dialog-body">{t(project.caseStudy.problem)}</p>
         </div>
         <div>
-          <h5>{t(projectsSection.built)}</h5>
+          <h4>{t(projectsSection.built)}</h4>
           <p className="dialog-body">{t(project.caseStudy.built)}</p>
         </div>
         <div>
-          <h5>{t(projectsSection.learned)}</h5>
+          <h4>{t(projectsSection.learned)}</h4>
           <p className="dialog-body">{t(project.caseStudy.learned)}</p>
         </div>
 
@@ -143,29 +113,20 @@ function Projects() {
 
   return (
     <section className="projects section" id="projetos">
-      <SectionLabel number="05">{projectsSection.label}</SectionLabel>
+      <SectionLabel>{projectsSection.label}</SectionLabel>
       <h2 className="section-title">
-        {t(projectsSection.titleStart)}
-        <em>{t(projectsSection.titleAccent)}</em>
+        {t(projectsSection.title)}
       </h2>
       <p className="projects-hint">{t(projectsSection.hint)}</p>
 
-      <ArchGallery items={galleryItems()} label={t(projectsSection.galleryLabel)} />
-
       <div className="project-list">
         {featuredProjects.map((project) => (
-          <article className="project-card card" key={project.number}>
+          <article className="project-row" key={project.number}>
             <div className="project-cover">
-              <span>{project.number}</span>
               <EndpointMockup endpoint={project.endpoint} />
             </div>
             <div className="project-info">
-              <div>
-                <p>
-                  {t(projectsSection.projectWord)} {project.number}
-                </p>
-                <h3>{project.title}</h3>
-              </div>
+              <h3>{project.title}</h3>
               <p>{t(project.description)}</p>
               <ul className="tag-list">
                 {project.tags.map((tag) => (
@@ -197,9 +158,9 @@ function Projects() {
           </a>
         </div>
 
-        <ul className="repo-grid">
+        <ul className="repo-list">
           {repositories.map((repo) => (
-            <li className="repo-card card" key={repo.name}>
+            <li className="repo-row" key={repo.name}>
               <h4>
                 <a href={repo.url} target="_blank" rel="noreferrer">
                   {repo.name}
@@ -208,7 +169,6 @@ function Projects() {
               <p>{t(repo.description)}</p>
               <div className="repo-footer">
                 <span className="repo-language">
-                  <i aria-hidden="true" />
                   {repo.language}
                 </span>
                 <ul className="tag-list" aria-label={repo.name}>

@@ -14,11 +14,8 @@ const WITH = { pt: 'Junto com', en: 'Alongside' }
 
 export const techSection = {
   label: { pt: 'Stack', en: 'Stack' },
-  title: { pt: 'As ferramentas, e onde eu uso cada uma.', en: 'The tools, and where I use each one.' },
-  hint: {
-    pt: 'Arraste para girar, ou use as setas do teclado.',
-    en: 'Drag to spin, or use the arrow keys.',
-  },
+  title: { pt: 'Ferramentas e onde cada uma entra.', en: 'The tools and where each one fits.' },
+  toolColumn: { pt: 'Ferramenta', en: 'Tool' },
 }
 
 export const techStack = [
@@ -155,12 +152,10 @@ export const techStack = [
 ]
 
 export const hero = {
-  eyebrow: { pt: 'Disponível para novos projetos', en: 'Available for new projects' },
-  titleStart: { pt: 'Eu construo o back-end que ', en: 'I build the back-end that ' },
-  titleAccent: { pt: 'sustenta o produto.', en: 'holds the product up.' },
+  title: 'Rafael Andriotti',
   description: {
-    pt: 'Sou Rafael, desenvolvedor back-end em Guaíba, RS. Trabalho com APIs REST em Node.js e TypeScript, modelagem em PostgreSQL e MongoDB, Docker no ambiente de desenvolvimento, e código que ainda faz sentido seis meses depois.',
-    en: "I'm Rafael, a back-end developer based in Guaíba, Brazil. I work with REST APIs in Node.js and TypeScript, modelling in PostgreSQL and MongoDB, Docker in the dev environment, and code that still makes sense six months later.",
+    pt: 'Desenvolvedor back-end em Guaíba, RS. Trabalho com APIs REST em Node.js e TypeScript, modelagem em PostgreSQL e MongoDB, Docker no ambiente de desenvolvimento, e código que ainda faz sentido seis meses depois.',
+    en: "Back-end developer based in Guaíba, Brazil. I work with REST APIs in Node.js and TypeScript, modelling in PostgreSQL and MongoDB, Docker in the dev environment, and code that still makes sense six months later.",
   },
   primaryCta: { pt: 'Ver projetos', en: 'See the work' },
   secondaryCta: { pt: 'Mais sobre mim', en: 'More about me' },
@@ -168,8 +163,7 @@ export const hero = {
 
 export const about = {
   label: { pt: 'Sobre mim', en: 'About me' },
-  titleStart: { pt: 'Back-end é onde eu ', en: 'Back-end is where I ' },
-  titleAccent: { pt: 'escolhi trabalhar.', en: 'chose to work.' },
+  title: { pt: 'Back-end é onde eu escolhi trabalhar.', en: 'Back-end is where I chose to work.' },
   paragraphs: [
     {
       pt: 'Trabalho na camada que fica atrás da interface: rotas, regras de negócio e banco de dados. É onde as decisões custam caro se forem mal tomadas, e é a parte que eu gosto de resolver.',
@@ -180,21 +174,19 @@ export const about = {
       en: "I learned by building. My projects start from an empty directory, not a boilerplate, because that's how I understand what happens between the request and the response.",
     },
   ],
-  link: { pt: 'Conheça minha trajetória', en: 'See how I got here' },
-  stats: [
-    { value: '13', label: { pt: 'Repositórios públicos', en: 'Public repositories' } },
-    { value: '3', label: { pt: 'APIs REST próprias', en: 'REST APIs of my own' } },
-    { value: '4', label: { pt: 'Linguagens em uso', en: 'Languages in use' } },
-  ],
+  link: { pt: 'Ver trajetória', en: 'See the path' },
+  proof: {
+    pt: '13 repositórios públicos no GitHub, 3 deles APIs REST completas.',
+    en: '13 public repositories on GitHub, 3 of them complete REST APIs.',
+  },
 }
 
 export const skills = {
   label: { pt: 'Habilidades', en: 'Skills' },
-  titleStart: { pt: 'O que eu uso, e ', en: 'What I use, and ' },
-  titleAccent: { pt: 'para quê.', en: 'what for.' },
+  title: { pt: 'APIs, dados e segurança.', en: 'APIs, data and security.' },
   intro: {
-    pt: 'Três frentes que aparecem em praticamente todo serviço que eu construo, com as ferramentas que uso em cada uma.',
-    en: 'Three fronts that show up in practically every service I build, with the tools I use on each.',
+    pt: 'As três partes que aparecem em todo serviço que eu construo, e como resolvo cada uma.',
+    en: 'The three parts that show up in every service I build, and how I handle each one.',
   },
   evidenceLabel: { pt: 'Como aplico', en: 'How I apply it' },
 }
@@ -227,8 +219,8 @@ export const skillGroups = [
   {
     title: { pt: 'Confiabilidade e segurança', en: 'Reliability and security' },
     description: {
-      pt: 'A parte que o usuário não vê, mas sente: validação de entrada, erros tratados e acesso protegido.',
-      en: "The part users don't see but feel: input validation, handled errors and protected access.",
+      pt: 'Validação de entrada, erros tratados e acesso protegido.',
+      en: 'Input validation, handled errors and protected access.',
     },
     evidence: {
       pt: 'Valido entrada com Zod, protejo rotas de escrita com JWT e bcrypt, e centralizo o tratamento de erros para a API não vazar detalhe de banco.',
@@ -240,8 +232,7 @@ export const skillGroups = [
 
 export const experienceSection = {
   label: { pt: 'Minha trajetória', en: 'My path' },
-  titleStart: { pt: 'Experiência construída entre ', en: 'Experience built between ' },
-  titleAccent: { pt: 'estudo e prática.', en: 'study and practice.' },
+  title: { pt: 'De suporte na prefeitura a servidor próprio.', en: 'From city-hall IT support to my own server.' },
   intro: {
     pt: 'Não venho de anos de empresa. Venho de projetos que eu levantei do zero, quebrei e arrumei até funcionar direito.',
     en: "I don't come from years at a company. I come from projects I stood up from scratch, broke, and fixed until they ran right.",
@@ -297,11 +288,10 @@ export const experiences = [
 
 export const projectsSection = {
   label: { pt: 'Projetos selecionados', en: 'Selected work' },
-  titleStart: { pt: 'Serviços que eu construí ', en: 'Services I built ' },
-  titleAccent: { pt: 'de ponta a ponta.', en: 'end to end.' },
+  title: { pt: 'Projetos que eu construí do zero.', en: 'Projects I built from scratch.' },
   hint: {
-    pt: 'Passe o mouse para ver as ações. Abra o estudo de caso para o raciocínio por trás.',
-    en: 'Hover to reveal the actions. Open the case study for the reasoning behind it.',
+    pt: 'Abra o estudo de caso para o raciocínio por trás de cada um.',
+    en: 'Open the case study for the reasoning behind each one.',
   },
   caseStudy: { pt: 'Estudo de caso', en: 'Case study' },
   viewCode: { pt: 'Ver no GitHub', en: 'View on GitHub' },
@@ -311,8 +301,6 @@ export const projectsSection = {
   learned: { pt: 'O que aprendi', en: 'What I learned' },
   otherRepos: { pt: 'Outros repositórios', en: 'Other repositories' },
   fullProfile: { pt: 'Ver perfil completo', en: 'See the full profile' },
-  projectWord: { pt: 'Projeto', en: 'Project' },
-  galleryLabel: { pt: 'Projetos em destaque', en: 'Featured projects' },
 }
 
 export const featuredProjects = [
@@ -485,8 +473,7 @@ export const resume = {
   path: `${import.meta.env.BASE_URL}curriculo-rafael-andriotti.pdf`,
   available: true,
   label: { pt: 'Currículo', en: 'Résumé' },
-  kicker: { pt: 'Perfil profissional', en: 'Professional profile' },
-  title: { pt: 'Minha trajetória, reunida em uma página.', en: 'My path, gathered onto one page.' },
+  title: { pt: 'Tudo isso em duas páginas.', en: 'All of it on two pages.' },
   description: {
     pt: 'APIs RESTful em Node.js e Express, modelagem relacional e não relacional, Docker no ambiente de desenvolvimento, e visão de negócio construída no suporte a sistemas ERP.',
     en: 'RESTful APIs in Node.js and Express, relational and non-relational modelling, Docker in the dev environment, and business sense built supporting ERP systems.',
@@ -521,39 +508,23 @@ export const contact = {
   phone: '51 99995-9163',
   github: GITHUB_USER,
   linkedin: 'https://www.linkedin.com/in/rafaelandriotti/',
-  eyebrow: { pt: 'Tem um problema para resolver?', en: 'Got a problem to solve?' },
-  title: { pt: 'Vamos conversar sobre o seu back-end.', en: "Let's talk about your back-end." },
+  title: { pt: 'Fale comigo.', en: 'Get in touch.' },
   description: {
-    pt: 'Estou aberto a oportunidades e a boas conversas sobre APIs, banco de dados e arquitetura. Me conte o que você está construindo.',
-    en: "I'm open to opportunities and to good conversations about APIs, databases and architecture. Tell me what you're building.",
+    pt: 'O jeito mais rápido é por e-mail. Também estou no LinkedIn e no GitHub.',
+    en: "Email is the fastest way. I'm also on LinkedIn and GitHub.",
   },
   cta: { pt: 'Enviar um e-mail', en: 'Send an email' },
 }
 
 export const footer = {
-  note: { pt: 'Desenvolvido com React e muita curiosidade.', en: 'Built with React and a lot of curiosity.' },
+  note: { pt: 'Rafael Andriotti · Guaíba, RS', en: 'Rafael Andriotti · Guaíba, Brazil' },
 }
 
 export const ui = {
   skip: { pt: 'Pular para o conteúdo', en: 'Skip to content' },
-  headerCta: { pt: 'Vamos conversar', en: "Let's talk" },
+  headerCta: { pt: 'Contato', en: 'Contact' },
   contactNav: { pt: 'Contato', en: 'Contact' },
   close: { pt: 'Fechar', en: 'Close' },
-  previous: { pt: 'Anterior', en: 'Previous' },
-  next: { pt: 'Próximo', en: 'Next' },
   theme: { pt: 'Alternar tema', en: 'Toggle theme' },
   menu: { pt: 'Menu', en: 'Menu' },
-}
-
-export const cursorName = {
-  guest: { pt: 'Visitante', en: 'Guest' },
-  question: { pt: 'Como posso te chamar?', en: 'What should I call you?' },
-  hint: {
-    pt: 'Seu nome fica só neste navegador, e aparece no cursor.',
-    en: 'Your name stays in this browser only, and shows up on the cursor.',
-  },
-  placeholder: { pt: 'Seu primeiro nome', en: 'Your first name' },
-  confirm: { pt: 'Pronto', en: 'Done' },
-  dismiss: { pt: 'Agora não', en: 'Not now' },
-  change: { pt: 'Trocar o nome do cursor', en: 'Change the cursor name' },
 }

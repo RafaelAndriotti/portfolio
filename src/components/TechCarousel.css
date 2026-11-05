@@ -1,0 +1,129 @@
+/* Stack como tabela com linhas. No desktop as colunas vêm do cabeçalho e os
+   <dt> somem visualmente; no celular cada linha empilha e o <dt> volta como
+   rótulo. */
+.stack-table {
+  margin-top: 40px;
+  --stack-cols: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1.5fr) minmax(0, 1fr);
+}
+
+.stack-head,
+.stack-row {
+  display: grid;
+  grid-template-columns: var(--stack-cols);
+  gap: var(--space-8);
+}
+
+.stack-head {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-text);
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+
+.stack-rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stack-row {
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.stack-tool {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.stack-tool svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  opacity: 0.8;
+}
+
+.stack-tool h3 {
+  margin: 0;
+  font-size: var(--text-h4);
+  line-height: 1.25;
+}
+
+.stack-tool p {
+  margin: 2px 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+
+/* `display: contents` deixa os <dd> caírem direto nas colunas da linha. */
+.stack-row dl,
+.stack-row dl > div {
+  display: contents;
+}
+
+.stack-row dt {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.stack-row dd {
+  margin: 0;
+  font-size: var(--text-meta);
+  line-height: 1.5;
+}
+
+/* No celular cada ferramenta vira três linhas: nome, para que serve e onde
+   aparece. "Junto com" sai — repete o que as outras linhas já contam. */
+@media (max-width: 760px) {
+  .stack-head {
+    display: none;
+  }
+
+  .stack-rows {
+    border-top: 1px solid var(--color-text);
+  }
+
+  .stack-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 14px 0;
+  }
+
+  .stack-row dl {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 0 0 0 30px;
+  }
+
+  .stack-row dl > div {
+    display: block;
+  }
+
+  .stack-row dl > div:nth-child(2) {
+    order: -1;
+  }
+
+  .stack-row dl > div:nth-child(3) {
+    display: none;
+  }
+
+  .stack-row dl > div:first-child dd {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    color: color-mix(in srgb, var(--color-text) 70%, transparent);
+  }
+}

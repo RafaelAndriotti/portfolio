@@ -8,12 +8,11 @@ function About() {
 
   return (
     <section className="about section" id="sobre">
-      <SectionLabel number="01">{about.label}</SectionLabel>
+      <SectionLabel>{about.label}</SectionLabel>
 
       <div className="about-content">
         <h2 className="section-title">
-          {t(about.titleStart)}
-          <em>{t(about.titleAccent)}</em>
+          {t(about.title)}
         </h2>
         <div className="about-text">
           {about.paragraphs.map((paragraph) => (
@@ -25,14 +24,7 @@ function About() {
         </div>
       </div>
 
-      <dl className="stats rule-top">
-        {about.stats.map((stat) => (
-          <div key={stat.value}>
-            <dd>{stat.value}</dd>
-            <dt>{t(stat.label)}</dt>
-          </div>
-        ))}
-      </dl>
+      <p className="about-proof rule-top">{t(about.proof)}</p>
     </section>
   )
 }

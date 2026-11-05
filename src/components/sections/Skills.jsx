@@ -7,21 +7,17 @@ function Skills() {
 
   return (
     <section className="skills-section section" id="habilidades">
+      <SectionLabel>{skills.label}</SectionLabel>
       <div className="skills-heading">
-        <div>
-          <SectionLabel number="02">{skills.label}</SectionLabel>
-          <h2 className="section-title">
-            {t(skills.titleStart)}
-            <em>{t(skills.titleAccent)}</em>
-          </h2>
-        </div>
+        <h2 className="section-title">
+          {t(skills.title)}
+        </h2>
         <p>{t(skills.intro)}</p>
       </div>
 
-      <div className="skill-grid">
-        {skillGroups.map((group, index) => (
-          <article className="skill-card card" key={group.title.pt}>
-            <span className="skill-number">0{index + 1}</span>
+      <div className="skill-list">
+        {skillGroups.map((group) => (
+          <article className="skill-row" key={group.title.pt}>
             <h3>{t(group.title)}</h3>
             <p>{t(group.description)}</p>
             <div className="skill-evidence">

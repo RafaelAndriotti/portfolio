@@ -8,15 +8,9 @@ function Hero() {
 
   return (
     <section className="hero section" id="inicio">
-      <div className="hero-glow" aria-hidden="true" />
-
       <div className="hero-copy">
-        <p className="eyebrow">
-          <span /> {t(hero.eyebrow)}
-        </p>
         <h1>
-          {t(hero.titleStart)}
-          <em>{t(hero.titleAccent)}</em>
+          {t(hero.title)}
         </h1>
         <p className="hero-description">{t(hero.description)}</p>
         <div className="hero-actions">
