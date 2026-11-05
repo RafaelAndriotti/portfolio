@@ -92,10 +92,12 @@ function CaseStudyDialog({ project, onClose }) {
           <h4>{t(projectsSection.built)}</h4>
           <p className="dialog-body">{t(project.caseStudy.built)}</p>
         </div>
-        <div>
-          <h4>{t(projectsSection.learned)}</h4>
-          <p className="dialog-body">{t(project.caseStudy.learned)}</p>
-        </div>
+        {project.caseStudy.learned ? (
+          <div>
+            <h4>{t(projectsSection.learned)}</h4>
+            <p className="dialog-body">{t(project.caseStudy.learned)}</p>
+          </div>
+        ) : null}
 
         <div className="dialog-actions">
           <a className="button button-primary" href={project.url} target="_blank" rel="noreferrer">

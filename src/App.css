@@ -89,7 +89,8 @@ main section[id] { scroll-margin-top: 72px; }
 }
 .hero > * { min-width: 0; }
 .hero-copy { position: relative; }
-.hero h1 { font-size: var(--text-display); font-weight: 650; line-height: 0.98; letter-spacing: -0.035em; margin: 0 0 28px; max-width: 14ch; }
+.hero h1 { font-size: var(--text-display); font-weight: 650; line-height: 0.98; letter-spacing: -0.035em; margin: 0 0 16px; max-width: 14ch; }
+.hero-meta { margin: 0 0 28px; font-family: var(--font-mono); font-size: var(--text-label); letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent); }
 .hero-description { font-size: var(--text-lead); line-height: 1.6; max-width: 54ch; margin: 0 0 30px; }
 .hero-description strong { font-weight: 700; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }

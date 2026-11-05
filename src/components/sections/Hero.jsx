@@ -12,6 +12,7 @@ function Hero() {
         <h1>
           {t(hero.title)}
         </h1>
+        <p className="hero-meta">{t(hero.meta)}</p>
         <p className="hero-description">{t(hero.description)}</p>
         <div className="hero-actions">
           <a className="button button-primary" href="#projetos">
