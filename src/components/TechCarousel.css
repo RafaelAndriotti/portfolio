@@ -85,46 +85,45 @@
   line-height: 1.5;
 }
 
+/* No celular cada ferramenta vira três linhas: nome, para que serve e onde
+   aparece. "Junto com" sai — repete o que as outras linhas já contam. */
 @media (max-width: 760px) {
   .stack-head {
     display: none;
-  }
-
-  .stack-row {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 20px 0;
-    border-bottom-color: var(--color-divider);
   }
 
   .stack-rows {
     border-top: 1px solid var(--color-text);
   }
 
-  .stack-row dl {
-    display: grid;
+  .stack-row {
+    grid-template-columns: 1fr;
     gap: 6px;
+    padding: 14px 0;
+  }
+
+  .stack-row dl {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     margin: 0 0 0 30px;
   }
 
   .stack-row dl > div {
-    display: grid;
-    grid-template-columns: 9ch minmax(0, 1fr);
-    gap: 12px;
+    display: block;
   }
 
-  .stack-row dt {
-    position: static;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    clip-path: none;
-    white-space: normal;
+  .stack-row dl > div:nth-child(2) {
+    order: -1;
+  }
+
+  .stack-row dl > div:nth-child(3) {
+    display: none;
+  }
+
+  .stack-row dl > div:first-child dd {
     font-family: var(--font-mono);
     font-size: var(--text-label);
-    line-height: 1.9;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
     color: color-mix(in srgb, var(--color-text) 70%, transparent);
   }
 }
